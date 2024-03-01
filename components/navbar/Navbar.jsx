@@ -81,26 +81,44 @@ const Navbar = () => {
           <div className="md:hidden">
             {/* menu icon */}
             <div>
-              <svg
-                onClick={() => setOpen(!open)}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 mt-2 cursor-pointer"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
+              {open ? (
+                <svg
+                  onClick={() => setOpen(!open)}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 mt-2 cursor-pointer"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  onClick={() => setOpen(!open)}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 mt-2 cursor-pointer"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              )}
             </div>
             {/* mobile menu item list */}
             <div>
               <ul
-                className={`md:hidden items-center font-medium bg-white w-full absolute  top-[80px] border text-center space-y-5 transition-all duration-300 ${
+                className={`md:hidden items-center font-medium bg-white w-full absolute  top-[80px] text-center space-y-5 transition-all duration-300 py-3 ${
                   open ? "left-0" : "-left-full"
                 }`}
               >
@@ -113,6 +131,7 @@ const Navbar = () => {
                           : navStyle.default
                       }
                       href={item.path}
+                      onClick={() => setOpen(!open)}
                     >
                       {item.name}
                     </Link>
