@@ -12,15 +12,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <main className={inter.className}>
+      <body className={inter.className}>
         {/* Main Navbar Component */}
         <Navbar />
-        <body className="max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4">
-          {children}
-        </body>
+
+        {children}
 
         {/* footer */}
-      </main>
+      </body>
     </html>
   );
 }

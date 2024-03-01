@@ -1,7 +1,0 @@
-.active {
-  @apply ;
-}
-
-.default{
-    @apply hover:bg-[#27bfb3] hover:text-white duration-300 transition-all px-3 py-1 rounded-sm;
-}

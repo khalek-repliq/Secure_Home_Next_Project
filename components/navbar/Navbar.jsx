@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import Container from "../container/Container";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const navStyle = {
   active: "bg-[#27bfb3] text-white  px-3 py-1 rounded-sm",
@@ -39,15 +38,12 @@ const navItem = [
 
 const Navbar = () => {
   const pathName = usePathname();
-  const router = useRouter();
-
-  console.log(pathName);
 
   const handleNavbarStyle = (itemPath) =>
     itemPath === pathName ? true : false;
 
   return (
-    <div className="border-2 border-black mb-6 shadow-lg py-5">
+    <div className=" mb-6 shadow-lg py-5">
       <div className="flex justify-between ">
         {/* logo area */}
         <div>
@@ -79,20 +75,18 @@ const Navbar = () => {
         {/* Items area */}
         <div className=" leading-[2.5]">
           <ul className=" flex items-center space-x-8 font-medium">
-            {navItem.map((items) => (
-              <li key={items.id}>
-                <button
+            {navItem.map((item) => (
+              <li key={item.id}>
+                <Link
                   className={
-                    handleNavbarStyle(items.path)
+                    handleNavbarStyle(item.path)
                       ? navStyle.active
                       : navStyle.default
                   }
-                  onClick={() => {
-                    router.push(items.path);
-                  }}
+                  href={item.path}
                 >
-                  {items.name}
-                </button>
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
