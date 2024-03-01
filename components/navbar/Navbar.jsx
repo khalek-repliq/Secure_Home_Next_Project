@@ -71,6 +71,7 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
+              <li className="relative">New Item</li>
             </ul>
           </div>
         </div>
