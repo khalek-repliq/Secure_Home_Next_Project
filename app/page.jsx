@@ -1,7 +1,10 @@
+import HomeBanner from "@/components/home-banner/HomeBanner";
+
 export default function Home() {
   return (
     <div>
-      <h1 className="font-light text-4xl bg-gray-200">Start Next.js </h1>
+      {/* Home page banner area */}
+      <HomeBanner></HomeBanner>
     </div>
   );
 }
