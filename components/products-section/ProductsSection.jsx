@@ -5,6 +5,7 @@ import React from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import SectionHeader from "../section-header/SectionHeader";
+import ProductCard from "../product-card/ProductCard";
 // import { useQuery } from "react-query";
 
 const ProductsSection = () => {
@@ -22,6 +23,11 @@ const ProductsSection = () => {
     <div>
       {/* Page Header  */}
       <SectionHeader>Products for Buy</SectionHeader>
+      {/* Main product  */}
+      <div>
+        {/* product card here */}
+        <ProductCard allProducts={allProducts} />
+      </div>
     </div>
   );
 };
