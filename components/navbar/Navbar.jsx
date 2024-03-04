@@ -119,7 +119,7 @@ const Navbar = () => {
             {/* mobile menu item list */}
             <div>
               <ul
-                className={`md:hidden items-center font-medium bg-white w-full absolute  top-[80px] text-center space-y-5 transition-all duration-300 py-3 ${
+                className={`md:hidden items-center font-medium bg-white w-full absolute  top-[80px] text-center space-y-5 transition-all duration-300 py-3 z-50 ${
                   open ? "left-0" : "-left-full"
                 }`}
               >

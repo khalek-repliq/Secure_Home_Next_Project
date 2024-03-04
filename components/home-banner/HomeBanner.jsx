@@ -8,14 +8,14 @@ const HomeBanner = () => {
     <div className="relative">
       {/* Background Image Component here */}
       <BannerBackground bannerImage={bannerImage}></BannerBackground>
-      <div className="absolute md:px-10 flex items-center top-0 text-white md:w-1/2 h-full">
-        <div>
+      <div className="absolute  px-3 md:px-5 lg:px-10 flex items-center top-0 text-white sm:w-1/2 h-full">
+        <div className="">
           {/* Main title */}
-          <h1 className="font-bold text-xl md:text-2xl lg:text-6xl leading-loose">
+          <h1 className="font-bold text-xl md:text-2xl lg:text-6xl text-center lg:text-left">
             Leading Home Automation System Provider
           </h1>
           {/* More content */}
-          <div className="md:my-5">
+          <div className="md:my-5 text-center lg:text-left">
             <PrimaryBtn direction={"/"}>Browse Products</PrimaryBtn>
           </div>
         </div>
