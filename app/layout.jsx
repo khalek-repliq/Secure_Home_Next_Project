@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         {/* Main Navbar Component */}
         <Navbar />
 
-        {children}
+        <div>{children}</div>
 
         {/* footer */}
       </body>

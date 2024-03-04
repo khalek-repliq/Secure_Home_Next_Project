@@ -6,7 +6,8 @@ import { usePathname } from "next/navigation";
 // Navbar Items style here
 const navStyle = {
   active: "bg-[#27bfb3] text-white  px-3 py-1 rounded-sm",
-  default: "px-3 py-1 rounded-sm",
+  default:
+    "px-3 py-1 rounded-sm hover:text-white hover:bg-[#27bfb3] duration-300 transition-all",
 };
 
 // All navbar Items list here
@@ -46,7 +47,7 @@ const Navbar = () => {
     itemPath === pathName ? true : false;
 
   return (
-    <div className=" mb-6 shadow-lg py-5 px-3 md:px-5 lg:px-10  bg-gray-300">
+    <div className="shadow-lg py-5 px-3 md:px-5 lg:px-10  bg-gray-300">
       <div className="flex justify-between ">
         {/* logo area */}
         <div>
