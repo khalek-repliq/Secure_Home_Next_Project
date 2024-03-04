@@ -1,8 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import GlobalWrapper from "@/components/container/GlobalWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata = {
   title: "Create Next App",
@@ -13,12 +15,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* Main Navbar Component */}
-        <Navbar />
+        <GlobalWrapper>
+          {/* Main Navbar Component */}
+          <Navbar />
 
-        <div>{children}</div>
-
-        {/* footer */}
+          <div>{children}</div>
+          {/* footer */}
+        </GlobalWrapper>
       </body>
     </html>
   );
