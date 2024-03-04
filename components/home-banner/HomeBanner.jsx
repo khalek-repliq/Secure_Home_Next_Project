@@ -7,7 +7,7 @@ const HomeBanner = () => {
   return (
     <div className="relative">
       {/* Background Image Component here */}
-      <BannerBackground bannerImage={bannerImage}></BannerBackground>
+      <BannerBackground bannerImage={bannerImage} />
       <div className="absolute  px-3 md:px-5 lg:px-10 flex items-center top-0 text-white sm:w-1/2 h-full">
         <div className="">
           {/* Main title */}

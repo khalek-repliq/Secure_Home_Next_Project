@@ -4,6 +4,7 @@ import React from "react";
 // import productsData from "@/DummyData/products/products.json";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import SectionHeader from "../section-header/SectionHeader";
 // import { useQuery } from "react-query";
 
 const ProductsSection = () => {
@@ -19,7 +20,8 @@ const ProductsSection = () => {
   console.log(allProducts);
   return (
     <div>
-      <h1 className="text-4xl">Lorem ipsum dolor sit amet.</h1>
+      {/* Page Header  */}
+      <SectionHeader>Products for Buy</SectionHeader>
     </div>
   );
 };

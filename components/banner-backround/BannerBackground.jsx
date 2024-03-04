@@ -10,6 +10,7 @@ const BannerBackground = ({ bannerImage, children }) => {
         quality={100}
         style={{
           objectFit: "cover",
+          objectPosition: "center",
         }}
       ></Image>
       {children}
