@@ -5,7 +5,7 @@ const SecondaryBtn = ({ direction, title }) => {
   return (
     <Link
       href={direction}
-      className="inline-block primary_btn_bg px-4 py-1 rounded-full"
+      className="inline-block primary_btn_bg px-5 py-2 rounded-lg"
     >
       {title}
     </Link>

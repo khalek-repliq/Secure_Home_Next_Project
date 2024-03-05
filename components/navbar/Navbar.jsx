@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 
 // Navbar Items style here
 const navStyle = {
-  active: "bg-[#27bfb3] text-white  px-3 py-1 rounded-sm",
+  active: "bg-[#27bfb3] text-white  px-5 py-2 rounded-full",
   default:
-    "px-3 py-1 rounded-sm hover:text-white hover:bg-[#27bfb3] duration-300 transition-all",
+    "px-5 py-2 rounded-full hover:text-white hover:bg-[#27bfb3] duration-300 transition-all",
 };
 
 // All navbar Items list here
@@ -47,12 +47,12 @@ const Navbar = () => {
     itemPath === pathName ? true : false;
 
   return (
-    <div className="shadow-lg py-5 px-3 md:px-5 lg:px-10  bg-gray-300">
+    <div className="shadow-lg py-3 px-3 md:px-5 lg:px-10  bg-gray-300">
       <div className="flex justify-between ">
         {/* logo area */}
         <div>
           <div>
-            <Link className="flex items-center" href="/">
+            <Link className="flex items-center space-x-2" href="/">
               {" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,8 +69,7 @@ const Navbar = () => {
                 />
               </svg>
               <div className="flex flex-col font-bold leading-none">
-                <span>Secure</span>
-                <span>Home</span>
+                <span className="text-xl">Secure Home</span>
               </div>
             </Link>
           </div>
