@@ -5,11 +5,11 @@ import React, { useState } from "react";
 import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 
 const ProductCard = ({ allProducts, productsLoading }) => {
-  const [select, setSelect] = useState(false);
   console.log(allProducts);
+  const [select, setSelect] = useState(false);
   return (
     <div>
-      <div className="grid grid-cols-3 gap-5 mx-5 my-10">
+      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-5 my-10">
         {productsLoading ? (
           <p>Loading ...</p>
         ) : (
@@ -18,19 +18,19 @@ const ProductCard = ({ allProducts, productsLoading }) => {
               key={product?.id}
               className=" rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white"
             >
-              <div>
+              <div className="flex flex-col justify-between h-full">
                 {/* Card Image */}
-                <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden lg:aspect-none group-hover:opacity-75 lg:h-90">
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden lg:aspect-none group-hover:opacity-75 lg:h-80">
                   <Image
                     src={product?.image}
                     alt="Product Image"
-                    className="h-full w-full object-cover object-center lg:h-full lg:w-full rounded-2xl"
+                    className="h-full w-full object-contain object-center lg:h-full lg:w-full rounded-2xl"
                     width={640}
                     height={480}
                   />
                 </div>
                 {/* Card content */}
-                <div className="p-5">
+                <div className="p-5 flex flex-col gap-4">
                   <div className="flex  justify-between">
                     <h5 className="text-xl font-medium  pr-1">
                       {product?.title}
@@ -68,7 +68,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
                   </div>
 
                   {/* Price and Details button */}
-                  <div className="flex items-center justify-between my-2">
+                  <div className="flex items-center justify-between">
                     <button>
                       Price:{" "}
                       <span className="font-medium">${product?.price}</span>
