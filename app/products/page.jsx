@@ -1,15 +1,32 @@
+"use client";
 import PageHeader from "@/components/page-header/PageHeader";
-import React from "react";
+import ProductCard from "@/components/product-card/ProductCard";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
-const Products = () => {
+export default function ProductsPage() {
+  const { data, isLoading } = useQuery({
+    queryKey: ["products"],
+    queryFn: () =>
+      axios
+        .get(
+          "https://raw.githubusercontent.com/khalek-repliq/Secure_Home_Next_Project/main/DummyData/products/products.json"
+        )
+        .then((res) => res.data),
+  });
+
   return (
     <div>
+      {/* Page header here */}
       <PageHeader
         title={"All Products"}
         subTitle={"Choose your desire product for secure your home."}
       ></PageHeader>
+
+      {/* Main product area */}
+      <div>
+        <ProductCard allProducts={data} productsLoading={isLoading} />
+      </div>
     </div>
   );
-};
-
-export default Products;
+}

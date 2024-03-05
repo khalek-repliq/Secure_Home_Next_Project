@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 // import productsData from "@/DummyData/products/products.json";
 import axios from "axios";
@@ -10,7 +9,7 @@ import ProductCard from "../product-card/ProductCard";
 
 const ProductsSection = () => {
   const { data: allProducts, isLoading: productsLoading } = useQuery({
-    queryKey: ["allProducts"],
+    queryKey: ["products"],
     queryFn: async () => {
       const res = await axios.get(
         "https://raw.githubusercontent.com/khalek-repliq/Secure_Home_Next_Project/main/DummyData/products/products.json"
@@ -18,7 +17,7 @@ const ProductsSection = () => {
       return res.data;
     },
   });
-  console.log(allProducts);
+  // console.log(allProducts);
   return (
     <div>
       {/* Page Header  */}
