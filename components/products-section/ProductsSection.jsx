@@ -9,7 +9,7 @@ import ProductCard from "../product-card/ProductCard";
 // import { useQuery } from "react-query";
 
 const ProductsSection = () => {
-  const { data: allProducts } = useQuery({
+  const { data: allProducts, isLoading: productsLoading } = useQuery({
     queryKey: ["allProducts"],
     queryFn: async () => {
       const res = await axios.get(
@@ -26,7 +26,10 @@ const ProductsSection = () => {
       {/* Main product  */}
       <div>
         {/* product card here */}
-        <ProductCard allProducts={allProducts} />
+        <ProductCard
+          allProducts={allProducts}
+          productsLoading={productsLoading}
+        />
       </div>
     </div>
   );

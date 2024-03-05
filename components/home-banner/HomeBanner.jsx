@@ -11,7 +11,7 @@ const HomeBanner = () => {
       <div className="absolute  px-3 md:px-5 lg:px-10 flex items-center top-0 text-white sm:w-1/2 h-full">
         <div className="">
           {/* Main title */}
-          <h1 className="font-bold text-xl md:text-2xl lg:text-6xl text-center lg:text-left">
+          <h1 className="font-bold text-white text-xl md:text-2xl lg:text-6xl text-center lg:text-left">
             Leading Home Automation System Provider
           </h1>
           {/* More content */}
