@@ -1,9 +1,13 @@
+import PageHeader from "@/components/page-header/PageHeader";
 import React from "react";
 
 const contactUs = () => {
   return (
     <div>
-      <h1 className="text-3xl">Contact Page</h1>
+      <PageHeader
+        title={"Contact Page"}
+        subTitle={"Contact for your any question and query."}
+      />
     </div>
   );
 };

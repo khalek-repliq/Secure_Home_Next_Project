@@ -1,5 +1,12 @@
-function Categories() {
-  return <p>this is categories</p>;
-}
+import PageHeader from "@/components/page-header/PageHeader";
+import React from "react";
 
-export default Categories;
+const page = () => {
+  return (
+    <div>
+      <PageHeader title={"Category"} subTitle={"See our all category here."} />
+    </div>
+  );
+};
+
+export default page;

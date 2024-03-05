@@ -1,6 +1,6 @@
 import React from "react";
 
-const PageHeader = ({ children }) => {
+const PageHeader = ({ title, subTitle }) => {
   return (
     <div className="relative">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -14,9 +14,9 @@ const PageHeader = ({ children }) => {
         style={{ transform: "translate(-50%, -50%)" }}
         className="absolute top-1/2 left-1/2 flex flex-col items-center"
       >
-        <h5 className="text-2xl md:text-3xl font-semibold  ">{children}</h5>
+        <h5 className="text-2xl md:text-3xl font-semibold  ">{title}</h5>
         <p className="text-sm md:text-base text-center text-gray-600 ">
-          Choose your desire product for secure your home.
+          {subTitle}
         </p>
       </div>
     </div>

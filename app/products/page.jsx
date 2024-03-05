@@ -4,7 +4,10 @@ import React from "react";
 const Products = () => {
   return (
     <div>
-      <PageHeader>All Products</PageHeader>
+      <PageHeader
+        title={"All Products"}
+        subTitle={"Choose your desire product for secure your home."}
+      ></PageHeader>
     </div>
   );
 };

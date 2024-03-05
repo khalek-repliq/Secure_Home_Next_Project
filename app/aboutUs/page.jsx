@@ -1,9 +1,13 @@
+import PageHeader from "@/components/page-header/PageHeader";
 import React from "react";
 
 const aboutUs = () => {
   return (
     <div>
-      <h1 className="text-3xl">About Us Page</h1>
+      <PageHeader
+        title={"About Us"}
+        subTitle={"Know more about our company."}
+      />
     </div>
   );
 };
