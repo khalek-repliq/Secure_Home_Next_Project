@@ -1,6 +1,80 @@
 import Link from "next/link";
 import React from "react";
 
+const services = [
+  {
+    id: 1,
+    name: "Reparation",
+  },
+  {
+    id: 2,
+    name: "Installation",
+  },
+  {
+    id: 3,
+    name: "Consultation",
+  },
+  {
+    id: 4,
+    name: "AMC",
+  },
+];
+
+const categories = [
+  {
+    id: 1,
+    name: "Dimmer",
+  },
+  {
+    id: 2,
+    name: "Water Heater",
+  },
+  {
+    id: 3,
+    name: "CCTV Cameras",
+  },
+  {
+    id: 4,
+    name: "Thermostats",
+  },
+  {
+    id: 5,
+    name: "Smoke Detecting Alarms",
+  },
+  {
+    id: 6,
+    name: "Blind & Drape Openers",
+  },
+];
+
+const pages = [
+  {
+    id: 1,
+    name: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    name: "Categories",
+    path: "/categories",
+  },
+  {
+    id: 3,
+    name: "Products",
+    path: "/products",
+  },
+  {
+    id: 4,
+    name: "About Us",
+    path: "/aboutUs",
+  },
+  {
+    id: 5,
+    name: "Contact Us",
+    path: "/contactUs",
+  },
+];
+
 const Footer = () => {
   return (
     <div className="bg-slate-200 relative">
@@ -12,8 +86,8 @@ const Footer = () => {
         ></path>
       </svg>
       {/* main content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 absolute top-0 left-0 px-3 md:px-5 lg:px-10 gap w-full h-full">
-        <div className="col-span-1 flex flex-col justify-evenly py-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 absolute top-0 left-0 px-3 md:px-5 lg:px-10 w-full h-full">
+        <div className="col-span-1 flex flex-col justify-evenly">
           <div>
             <Link className="flex items-center space-x-2" href="/">
               <svg
@@ -52,8 +126,48 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-span-2 border">
-          <div></div>
+        <div className="col-span-2 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <h6 className="text-xl font-bold mb-4">Services</h6>
+              <ul className="flex flex-col space-y-3">
+                {services?.map((service) => (
+                  <li
+                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all"
+                    key={service.id}
+                  >
+                    {service.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h6 className="text-xl font-bold mb-4">Categories</h6>
+              <ul className="flex flex-col space-y-3">
+                {categories?.map((category) => (
+                  <li
+                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all"
+                    key={category.id}
+                  >
+                    {category.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h6 className="text-xl font-bold mb-4">Pages</h6>
+              <ul className="flex flex-col space-y-3">
+                {pages?.map((page) => (
+                  <li
+                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all"
+                    key={page.id}
+                  >
+                    {page.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
