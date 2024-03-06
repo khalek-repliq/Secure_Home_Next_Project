@@ -52,6 +52,15 @@
     "image": "https://i.ibb.co/rvNsPtb/product-7.jpg",
     "category": "Temperature meter",
     "company": "HTC"
+  },
+  {
+    "id": 7,
+    "title": "Wireless anti thief motion detector",
+    "description": "This is the description for the Wireless anti thief motion detector.",
+    "price": 20.99,
+    "image": "https://i.ibb.co/1mnfxVr/product-3.jpg",
+    "category": "Motion sensor",
+    "company": "SUMRING"
   }
 ]
 

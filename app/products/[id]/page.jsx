@@ -1,6 +1,9 @@
 "use client";
+import ProductCard from "@/components/product-card/ProductCard";
+import SecondaryBtn from "@/components/secondary-Btn/SecondaryBtn";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 export default function ProductDetails() {
@@ -15,36 +18,63 @@ export default function ProductDetails() {
         .then((res) => res.data),
   });
   const product = data?.find((product) => product.id == id);
+  const relatedProducts = data?.filter(
+    (item) => item.category === product.category
+  );
+  console.log(relatedProducts);
+
   return (
-    <>
-      <div>
-        <div className="">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white p-10 rounded-2xl m-10">
-            {/* Product Image Area */}
-            <div className="flex  justify-end">
-              <div className="w-3/4 h-auto">
-                <Image
-                  src={product?.image}
-                  className="w-full h-full"
-                  alt="Product Image"
-                  width={350}
-                  height={300}
-                />
-              </div>
-            </div>
-            {/* Product Specification Content */}
-            <div className="mt-6 ">
-              <div className="flex flex-col space-y-5 items-start">
-                <h4 className="text-4xl">{product?.title}</h4>
-                <p className="lg:text-xl">{product?.description}</p>
-                <button className="border bg-blue-50 py-2 px-6">
-                  Price: ${product.price}
-                </button>
-              </div>
+    <div className="m-10 rounded-2xl bg-white p-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        {/* Product Image Area */}
+        <div className="flex  justify-end">
+          <div className="w-3/4 h-auto">
+            <Image
+              src={product?.image}
+              className="w-full h-full"
+              alt="Product Image"
+              width={350}
+              height={300}
+            />
+          </div>
+        </div>
+        {/* Product Specification Content */}
+        <div className="mt-6 ">
+          <div className="flex flex-col space-y-8 items-start">
+            <h4 className="text-4xl">{product?.title}</h4>
+            <p className="lg:text-xl">{product?.description}</p>
+            <table className=" w-2/3 flex flex-col gap-5">
+              <tr className="flex ">
+                <td className="w-1/2 font-bold text-gray-600">Price:</td>
+                <td className="text-[#27bfb3] font-medium">
+                  ${product?.price}
+                </td>
+              </tr>
+              <tr className="flex ">
+                <td className="w-1/2 font-bold text-gray-600">Category: </td>
+                <td className="font-medium">{product?.category}</td>
+              </tr>
+              <tr className="flex ">
+                <td className="w-1/2  font-bold text-gray-600">Company: </td>
+                <td className="font-medium">{product?.company}</td>
+              </tr>
+            </table>
+            <div>
+              <SecondaryBtn title={"Add to card"} direction={"/"} />
             </div>
           </div>
         </div>
       </div>
-    </>
+      <div className="w-full border-b-2"></div>
+      <div className="my-3">
+        <h4 className="text-3xl">Related products</h4>
+      </div>
+      <div>
+        <ProductCard
+          allProducts={relatedProducts}
+          productsLoading={isLoading}
+        ></ProductCard>
+      </div>
+    </div>
   );
 }
