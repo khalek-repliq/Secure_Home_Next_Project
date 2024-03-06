@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import GlobalWrapper from "@/components/container/GlobalWrapper";
 import { Toaster } from "react-hot-toast";
+import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,10 @@ export default function RootLayout({ children }) {
           <Navbar />
           <div>{children}</div>
           {/* footer */}
+          <Footer />
+          <Toaster />
         </body>
       </GlobalWrapper>
-      <Toaster />
     </html>
   );
 }

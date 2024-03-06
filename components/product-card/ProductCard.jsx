@@ -1,13 +1,11 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 
 const ProductCard = ({ allProducts, productsLoading }) => {
   const [select, setSelect] = useState(false);
 
-  console.log(allProducts);
   return (
     <div>
       <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-5 my-10">
@@ -17,7 +15,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
           allProducts?.map((product) => (
             <div
               key={product?.id}
-              className=" rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white"
+              className="border rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white"
             >
               <div className="flex flex-col justify-between h-full">
                 {/* Card Image */}

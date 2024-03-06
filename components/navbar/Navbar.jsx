@@ -54,7 +54,6 @@ const Navbar = () => {
         <div>
           <div>
             <Link className="flex items-center space-x-2" href="/">
-              {" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
