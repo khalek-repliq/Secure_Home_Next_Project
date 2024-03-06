@@ -75,7 +75,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
                       <span className="font-medium">${product?.price}</span>
                     </button>
                     <SecondaryBtn
-                      direction={`products/${product.id}`}
+                      direction={`/products/${product.id}`}
                       title={"Details"}
                     />
                   </div>

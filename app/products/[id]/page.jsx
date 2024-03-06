@@ -3,8 +3,8 @@ import ProductCard from "@/components/product-card/ProductCard";
 import SecondaryBtn from "@/components/secondary-Btn/SecondaryBtn";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import Link from "next/link";
 import { useParams } from "next/navigation";
+import { toast } from "react-hot-toast";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -21,7 +21,10 @@ export default function ProductDetails() {
   const relatedProducts = data?.filter(
     (item) => item.category === product.category
   );
-  console.log(relatedProducts);
+
+  const handleAddToCart = () => {
+    toast.success("Product Added");
+  };
 
   return (
     <div className="m-10 rounded-2xl bg-white p-10">
@@ -60,7 +63,12 @@ export default function ProductDetails() {
               </tr>
             </table>
             <div>
-              <SecondaryBtn title={"Add to card"} direction={"/"} />
+              <button
+                onClick={handleAddToCart}
+                className="inline-block primary_btn_bg px-5 py-2 rounded-lg text-sm"
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
@@ -73,7 +81,7 @@ export default function ProductDetails() {
         <ProductCard
           allProducts={relatedProducts}
           productsLoading={isLoading}
-        ></ProductCard>
+        />
       </div>
     </div>
   );

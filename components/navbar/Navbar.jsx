@@ -2,12 +2,13 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 
 // Navbar Items style here
 const navStyle = {
-  active: "bg-[#27bfb3] text-white  px-5 py-2 rounded-full",
+  active: "bg-[#27bfb3] text-white  px-5 py-2 rounded-full text-sm",
   default:
-    "px-5 py-2 rounded-full hover:text-white hover:bg-[#27bfb3] duration-300 transition-all",
+    "px-5 py-2 rounded-full hover:text-white hover:bg-[#27bfb3] duration-300 transition-all text-sm",
 };
 
 // All navbar Items list here
