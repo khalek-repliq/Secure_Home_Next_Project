@@ -1,12 +1,15 @@
-import { Inter } from "next/font/google";
+import { Figtree, PT_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import GlobalWrapper from "@/components/container/GlobalWrapper";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
+// Figtree
+// const inter = Inter({ subsets: ["latin"] });
+const font = Figtree({ subsets: ["latin"] });
+// const font = Plus_Jakarta_Sans({ subsets: ["latin"] });
+// const font = PT_Sans({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -17,10 +20,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <GlobalWrapper>
-        <body className={`${inter.className} bg-gray-100 `}>
+        <body className={`${font.className} bg-gray-100 `}>
           {/* Main Navbar Component */}
           <Navbar />
-          <div>{children}</div>
+          <div className="px-3 md:px-5 lg:px-10">{children}</div>
           {/* footer */}
           <Footer />
           <Toaster />

@@ -77,16 +77,9 @@ const pages = [
 
 const Footer = () => {
   return (
-    <div className="bg-slate-200 relative">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#27bfb3"
-          fill-opacity="0.5"
-          d="M0,256L80,240C160,224,320,192,480,154.7C640,117,800,75,960,58.7C1120,43,1280,53,1360,58.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-        ></path>
-      </svg>
+    <div className="bg-slate-200 px-3 md:px-5 lg:px-10">
       {/* main content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 absolute top-0 left-0 px-3 md:px-5 lg:px-10 w-full h-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   w-full h-full ">
         <div className="col-span-1 flex flex-col justify-evenly">
           <div>
             <Link className="flex items-center space-x-2" href="/">
@@ -126,7 +119,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="col-span-2 py-6">
+        <div className="col-span-2 py-6 ">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <div>
               <h6 className="text-xl font-bold mb-4">Services</h6>
@@ -162,13 +155,16 @@ const Footer = () => {
                     className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all"
                     key={page.id}
                   >
-                    {page.name}
+                    <Link href={page?.path}>{page.name}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
+      </div>
+      <div className="grid w-full border-t-[1px] h-20 border-white">
+        <p className="place-self-center">@All rights reserved.</p>
       </div>
     </div>
   );
