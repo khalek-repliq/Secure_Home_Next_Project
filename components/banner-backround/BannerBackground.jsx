@@ -13,6 +13,7 @@ const BannerBackground = ({ bannerImage, children }) => {
           objectPosition: "center",
           width: "100%",
         }}
+        priority
       ></Image>
       {children}
     </>

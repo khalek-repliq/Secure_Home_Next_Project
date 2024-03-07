@@ -27,7 +27,7 @@ export default function ProductDetails() {
   };
 
   return (
-    <div className="m-10 rounded-2xl bg-white p-10">
+    <div className="my-10 rounded-2xl bg-white p-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Product Image Area */}
         <div className="flex  justify-end">
@@ -73,7 +73,7 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="w-full border-b-2"></div>
+      <div className="w-full border-b-[1px] my-5 md:my-10"></div>
       <div className="my-3">
         <h4 className="text-3xl">Related products</h4>
       </div>

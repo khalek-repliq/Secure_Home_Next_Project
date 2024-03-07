@@ -2,13 +2,15 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ShoppingCartIcon } from "@heroicons/react/20/solid";
+import MegaMenu from "./MegaMenu";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 // Navbar Items style here
 const navStyle = {
-  active: "bg-[#27bfb3] text-white  px-4 py-2 rounded-md text-sm",
+  active:
+    "bg-[#27bfb3] text-white  px-4 py-2 rounded-md text-sm flex items-center",
   default:
-    "px-4 py-2 rounded-md hover:text-white hover:bg-[#27bfb3] duration-300 transition-all text-sm",
+    "px-4 py-2 rounded-md hover:text-white hover:bg-[#27bfb3] duration-300 transition-all text-sm flex items-center",
 };
 
 // All navbar Items list here
@@ -43,6 +45,7 @@ const navItem = [
 const Navbar = () => {
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
+  const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
 
   const handleNavbarStyle = (itemPath) =>
     itemPath === pathName ? true : false;
@@ -142,8 +145,12 @@ const Navbar = () => {
           </div>
 
           <ul className={`hidden md:flex items-center space-x-4 font-medium`}>
-            {navItem.map((item) => (
-              <li key={item.id}>
+            {navItem.map((item, index) => (
+              <li
+                onMouseEnter={() => index === 1 && setIsCategoryMenuOpen(true)}
+                onMouseLeave={() => index === 1 && setIsCategoryMenuOpen(false)}
+                key={item.id}
+              >
                 <Link
                   className={
                     handleNavbarStyle(item.path)
@@ -152,11 +159,21 @@ const Navbar = () => {
                   }
                   href={item.path}
                 >
-                  {item.name}
+                  <span>{item.name}</span>
+                  {item.id === 2 && (
+                    <span>
+                      <ChevronDownIcon className="h-6 w-6" />
+                    </span>
+                  )}
                 </Link>
               </li>
             ))}
           </ul>
+          <MegaMenu
+            isOpen={isCategoryMenuOpen}
+            onMouseEnter={() => setIsCategoryMenuOpen(true)}
+            onMouseLeave={() => setIsCategoryMenuOpen(false)}
+          />
         </div>
       </div>
     </div>

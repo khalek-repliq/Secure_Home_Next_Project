@@ -79,7 +79,7 @@ const Footer = () => {
   return (
     <div className="bg-slate-200 px-3 md:px-5 lg:px-10">
       {/* main content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   w-full h-full ">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 w-full h-full ">
         <div className="col-span-1 flex flex-col justify-evenly">
           <div>
             <Link className="flex items-center space-x-2" href="/">
