@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <body className={`${font.className} bg-gray-100 `}>
           {/* Main Navbar Component */}
           <Navbar />
-          <div className="px-3 md:px-5 lg:px-10">{children}</div>
+          <div>{children}</div>
           {/* footer */}
           <Footer />
           <Toaster />

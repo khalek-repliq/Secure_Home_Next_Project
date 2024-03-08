@@ -18,10 +18,6 @@ export default function ProductsPage() {
   return (
     <div>
       {/* Page header here */}
-      <PageHeader
-        title={"All Products"}
-        subTitle={"Choose your desire product for secure your home."}
-      ></PageHeader>
 
       {/* Main product area */}
       <div>
