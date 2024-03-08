@@ -4,10 +4,7 @@ import React from "react";
 const contactUs = () => {
   return (
     <div>
-      <PageHeader
-        title={"Contact Page"}
-        subTitle={"Contact for your any question and query."}
-      />
+      <h1 className="text-4xl">Contact Page.</h1>
     </div>
   );
 };
