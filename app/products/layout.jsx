@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 
 export default function ProductLayout({ children }) {
   const pathName = usePathname();
-  console.log(pathName);
 
   const showPageHeader = pathName === "/products";
 

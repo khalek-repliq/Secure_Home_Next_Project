@@ -32,11 +32,16 @@ const navItem = [
   },
   {
     id: 4,
+    name: "Services",
+    path: "/secondLayout/services",
+  },
+  {
+    id: 5,
     name: "About Us",
     path: "/secondLayout/aboutUs",
   },
   {
-    id: 5,
+    id: 6,
     name: "Contact Us",
     path: "/secondLayout/contactUs",
   },

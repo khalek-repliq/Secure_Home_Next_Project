@@ -21,6 +21,11 @@ export default function SecondLayout({ children }) {
         title: "Categories",
         desc: "Here are all our products category for more easy choose your product.",
       };
+    } else if (pathName === "/secondLayout/services") {
+      return {
+        title: "Services",
+        desc: "Here you can find all our services.",
+      };
     }
   };
 
