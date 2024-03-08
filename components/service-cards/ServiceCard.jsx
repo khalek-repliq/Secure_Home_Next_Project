@@ -4,7 +4,7 @@ import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 
 const ServiceCard = ({ service }) => {
   return (
-    <div className="border rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white p-2">
+    <div className="border rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white p-2 cursor-pointer">
       <div className="flex flex-col justify-between h-full">
         {/* Card Image */}
         <div className="w-full overflow-hidden mb-3">
@@ -26,7 +26,7 @@ const ServiceCard = ({ service }) => {
           {/* Details button */}
           <div className="flex items-center justify-end">
             <SecondaryBtn
-              direction={`/services/${service?.id}`}
+              direction={`/secondLayout/services/${service?.id}`}
               title={"Details"}
             />
           </div>

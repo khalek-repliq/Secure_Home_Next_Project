@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 export default function SecondLayout({ children }) {
   const pathName = usePathname();
 
+  
+
   const pageHeaderContent = () => {
     if (pathName === "/secondLayout/contactUs") {
       return {
@@ -26,15 +28,19 @@ export default function SecondLayout({ children }) {
         title: "Services",
         desc: "Here you can find all our services.",
       };
+    } else {
+      return null;
     }
   };
 
   return (
     <>
-      <PageHeader
-        title={pageHeaderContent().title}
-        subTitle={pageHeaderContent().desc}
-      />
+      {pageHeaderContent() == null || (
+        <PageHeader
+          title={pageHeaderContent().title}
+          subTitle={pageHeaderContent().desc}
+        />
+      )}
       <div className="main_container">{children}</div>
     </>
   );

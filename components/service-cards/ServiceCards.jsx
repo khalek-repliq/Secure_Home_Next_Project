@@ -16,7 +16,7 @@ const ServiceCards = () => {
   });
 
   return (
-    <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-10 md:my-12">
+    <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 md:my-12">
       {isLoading ? (
         <p>Loading ...</p>
       ) : (

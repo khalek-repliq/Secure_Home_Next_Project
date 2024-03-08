@@ -8,14 +8,14 @@ const ProductCard = ({ allProducts, productsLoading }) => {
 
   return (
     <div>
-      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
+      <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 ">
         {productsLoading ? (
           <p>Loading ...</p>
         ) : (
           allProducts?.map((product) => (
             <div
               key={product?.id}
-              className="border rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white"
+              className="border rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white mb-5"
             >
               <div className="flex flex-col justify-between h-full">
                 {/* Card Image */}
