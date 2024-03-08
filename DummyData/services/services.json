@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Reparation",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
+    "image": "https://i.ibb.co/mD4WNPX/service-image-1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Installation",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
+    "image": "https://i.ibb.co/sHr3nNb/service-image-2.webp"
+  },
+  {
+    "id": 3,
+    "title": "Consultation",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
+    "image": "https://i.ibb.co/Tbtqsfm/service-image-3.webp"
+  },
+  {
+    "id": 4,
+    "title": "AMC",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
+    "image": "https://i.ibb.co/cQ7LS41/service-image-4.webp"
+  }
+]
