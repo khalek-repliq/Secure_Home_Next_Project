@@ -6,7 +6,7 @@ export default function Home() {
     <div>
       {/* Product display section */}
       <HomeBanner />
-      <div className="px-3 md:px-5 lg:px-10">
+      <div className="main_container">
         <ProductsSection />
       </div>
     </div>

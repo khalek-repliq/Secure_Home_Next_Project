@@ -35,7 +35,7 @@ export default function SecondLayout({ children }) {
         title={pageHeaderContent().title}
         subTitle={pageHeaderContent().desc}
       />
-      <div className="bg-blue-200 px-10">{children}</div>
+      <div className="main_container">{children}</div>
     </>
   );
 }

@@ -1,9 +1,9 @@
-import React from "react";
+import ServiceCards from "@/components/service-cards/ServiceCards";
 
 const Services = () => {
   return (
     <div>
-      <h1 className="text-3xl">services page.</h1>
+      <ServiceCards />
     </div>
   );
 };
