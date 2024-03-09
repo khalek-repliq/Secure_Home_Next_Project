@@ -23,7 +23,7 @@ const navItem = [
   {
     id: 2,
     name: "Categories",
-    path: "/secondLayout/categories",
+    path: "/categories",
   },
   {
     id: 3,
@@ -33,17 +33,17 @@ const navItem = [
   {
     id: 4,
     name: "Services",
-    path: "/secondLayout/services",
+    path: "/services",
   },
   {
     id: 5,
     name: "About Us",
-    path: "/secondLayout/aboutUs",
+    path: "/aboutUs",
   },
   {
     id: 6,
     name: "Contact Us",
-    path: "/secondLayout/contactUs",
+    path: "/contactUs",
   },
 ];
 

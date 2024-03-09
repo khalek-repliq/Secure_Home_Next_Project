@@ -26,7 +26,7 @@ const ServiceCard = ({ service }) => {
           {/* Details button */}
           <div className="flex items-center justify-end">
             <SecondaryBtn
-              direction={`/secondLayout/services/${service?.id}`}
+              direction={`/services/${service?.id}`}
               title={"Details"}
             />
           </div>

@@ -1,7 +1,10 @@
 function TestLayout({ children }) {
   return (
-    <div className="flex w-full h-screen items-center justify-center">
-      {children}
+    <div>
+      <div>
+        <h1 className="text-3xl">Test layout</h1>
+      </div>
+      <div>{children}</div>
     </div>
   );
 }
