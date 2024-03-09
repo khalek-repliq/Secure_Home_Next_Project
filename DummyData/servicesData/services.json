@@ -3,24 +3,177 @@
     "id": 1,
     "title": "Reparation",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
-    "image": "https://i.ibb.co/mD4WNPX/service-image-1.jpg"
+    "image": "https://i.ibb.co/mD4WNPX/service-image-1.jpg",
+    "price": "$50 - $200",
+    "duration": "1 - 3 hours",
+    "location": "On-site or at our repair center",
+    "availability": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "requirements": "Bring the faulty device or equipment to our repair center",
+    "reviews": [
+      {
+        "user": "Emily Johnson",
+        "rating": 4,
+        "comment": "Quick and efficient repair service. Would definitely recommend."
+      },
+      {
+        "user": "Michael Brown",
+        "rating": 3.5,
+        "comment": "Good service overall, but slightly expensive compared to other repair centers."
+      }
+    ],
+    "provider_information": {
+      "company_name": "FixIt Repairs",
+      "contact_email": "info@fixitrepairs.com",
+      "contact_phone": "+1234567890",
+      "website": "https://fixitrepairs.com"
+    },
+    "additional_features": [
+      "Expert technicians",
+      "Quality replacement parts",
+      "Free diagnosis"
+    ],
+    "related_services": [
+      {
+        "title": "Device Maintenance",
+        "link": "https://fixitrepairs.com/maintenance"
+      },
+      {
+        "title": "Electronics Consultation",
+        "link": "https://fixitrepairs.com/consultation"
+      }
+    ]
   },
   {
     "id": 2,
-    "title": "Installation",
+    "title": " Installation",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
-    "image": "https://i.ibb.co/sHr3nNb/service-image-2.webp"
+    "image": "https://i.ibb.co/sHr3nNb/service-image-2.webp",
+    "price": "$200 - $500",
+    "duration": "2 - 4 hours",
+    "location": "Residential and commercial premises in metropolitan areas",
+    "availability": "Monday to Saturday, 9:00 AM - 6:00 PM",
+    "requirements": "Access to electricity outlets and stable internet connection",
+    "reviews": [
+      {
+        "user": "John Doe",
+        "rating": 4.5,
+        "comment": "Great service, the installation was done professionally and on time."
+      },
+      {
+        "user": "Jane Smith",
+        "rating": 5,
+        "comment": "Very satisfied with the CCTV installation. The team was knowledgeable and helpful."
+      }
+    ],
+    "provider_information": {
+      "company_name": "SecureTech Solutions",
+      "contact_email": "info@securetech.com",
+      "contact_phone": "+1234567890",
+      "website": "https://securetech.com"
+    },
+    "additional_features": [
+      "High-resolution cameras",
+      "Remote monitoring capabilities",
+      "Motion detection alerts"
+    ],
+    "related_services": [
+      {
+        "title": "CCTV Camera Maintenance",
+        "link": "https://securetech.com/maintenance"
+      },
+      {
+        "title": "Security System Consultation",
+        "link": "https://securetech.com/consultation"
+      }
+    ]
   },
+
   {
     "id": 3,
     "title": "Consultation",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
-    "image": "https://i.ibb.co/Tbtqsfm/service-image-3.webp"
+    "image": "https://i.ibb.co/Tbtqsfm/service-image-3.webp",
+    "price": "$50 (Initial consultation)",
+    "duration": "1 hour",
+    "location": "In-person or online",
+    "availability": "By appointment, flexible scheduling",
+    "requirements": "None",
+    "reviews": [
+      {
+        "user": "Sarah Lee",
+        "rating": 5,
+        "comment": "Highly informative consultation session. Provided valuable insights."
+      },
+      {
+        "user": "David Clark",
+        "rating": 4.5,
+        "comment": "Professional and helpful consultation. Answered all my queries."
+      }
+    ],
+    "provider_information": {
+      "company_name": "Insightful Consulting",
+      "contact_email": "info@insightfulconsulting.com",
+      "contact_phone": "+1234567890",
+      "website": "https://insightfulconsulting.com"
+    },
+    "additional_features": [
+      "Personalized advice",
+      "Customized solutions",
+      "Follow-up support"
+    ],
+    "related_services": [
+      {
+        "title": "Implementation Services",
+        "link": "https://insightfulconsulting.com/implementation"
+      },
+      {
+        "title": "Training Workshops",
+        "link": "https://insightfulconsulting.com/training"
+      }
+    ]
   },
   {
     "id": 4,
-    "title": "AMC",
+    "title": "AMC (Annual Maintenance Cost)",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis ante eget libero molestie, vel faucibus elit sollicitudin. Sed nec augue id nisi vestibulum condimentum.",
-    "image": "https://i.ibb.co/cQ7LS41/service-image-4.webp"
+    "image": "https://i.ibb.co/cQ7LS41/service-image-4.webp",
+    "price": "$300 - $1000 (Depending on the type and number of devices)",
+    "duration": "1 year",
+    "location": "On-site or remote support",
+    "availability": "Year-round",
+    "requirements": "None",
+    "reviews": [
+      {
+        "user": "Mark Taylor",
+        "rating": 4.5,
+        "comment": "Great value for money. Comprehensive AMC service."
+      },
+      {
+        "user": "Sophia Anderson",
+        "rating": 5,
+        "comment": "Professional and reliable AMC support. Highly recommended."
+      }
+    ],
+    "provider_information": {
+      "company_name": "Reliable Maintenance Services",
+      "contact_email": "info@reliablemaintenance.com",
+      "contact_phone": "+1234567890",
+      "website": "https://reliablemaintenance.com"
+    },
+    "additional_features": [
+      "Regular maintenance checks",
+      "Priority support for emergencies",
+      "Discounts on replacement parts"
+    ],
+    "related_services": [
+      {
+        "title": "Device Repairs",
+        "link": "https://reliablemaintenance.com/repairs"
+      },
+      {
+        "title": "Installation Services",
+        "link": "https://reliablemaintenance.com/installation"
+      }
+    ]
   }
 ]

@@ -22,8 +22,10 @@ const ServiceDetails = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <div>
-          <h1 className="text-3xl">{service.title}</h1>
+        <div className="bg-white rounded-xl p-5 my-6 md:my10">
+          <div>
+            <h1 className="text-4xl">Lorem ipsum dolor sit amet.</h1>
+          </div>
         </div>
       )}
     </>
