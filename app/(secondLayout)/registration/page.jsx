@@ -4,6 +4,7 @@ import { signUPSchema } from "@/schema/yupSchema";
 import { useFormik } from "formik";
 import Link from "next/link";
 import React from "react";
+import toast from "react-hot-toast";
 
 const initialValues = {
   name: "",
@@ -20,12 +21,20 @@ const Registration = () => {
       onSubmit: (values, action) => {
         console.log(values);
         action.resetForm();
+
+        const existingUser = JSON.parse(localStorage.getItem("user"));
+        if (existingUser) {
+          return toast.error("user already exist.");
+        } else {
+          localStorage.setItem("user", JSON.stringify(values));
+          toast.success("User saved.");
+        }
       },
     });
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-64px)] my-10">
-      <div className="p-5 bg-white shadow-lg rounded-md w-full md:w-2/3 lg:w-1/4 mt-5">
+      <div className="p-5 bg-white shadow-lg rounded-md w-full md:w-2/3 lg:w-2/4 xl:w-1/4 mt-5">
         <h5 className="text-3xl text-center mb-3">Registration</h5>
         <div className="space-y-3">
           <form onSubmit={handleSubmit}>

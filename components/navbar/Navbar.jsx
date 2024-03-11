@@ -42,8 +42,8 @@ const navItem = [
   },
   {
     id: 6,
-    name: "Contact Us",
-    path: "/contactUs",
+    name: "Login",
+    path: "/login",
   },
 ];
 
@@ -84,7 +84,7 @@ const Navbar = () => {
         </div>
 
         {/* Items area */}
-        <div className="mt-2 lg:mt-0 md:leading-[2.5]">
+        <div className="md:mt-2 lg:mt-0 md:leading-[2.5]">
           {/* Mobile hamburger menu icon */}
           <div className="md:hidden">
             {/* menu icon */}
