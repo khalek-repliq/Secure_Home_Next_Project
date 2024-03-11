@@ -1,6 +1,15 @@
 export default function CustomInput(props) {
-  const { type, placeholder, value, addedClass } = props;
-  console.log(type);
+  const {
+    type,
+    placeholder,
+    value,
+    addedClass,
+    autoComplete,
+    name,
+    id,
+    handleChange,
+    handleBlur,
+  } = props;
 
   return (
     <input
@@ -8,6 +17,11 @@ export default function CustomInput(props) {
       type={type}
       placeholder={placeholder}
       value={value}
+      autoComplete={autoComplete}
+      name={name}
+      id={id}
+      onChange={handleChange}
+      onBlur={handleBlur}
     />
   );
 }

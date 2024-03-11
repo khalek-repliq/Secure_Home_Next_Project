@@ -14,10 +14,7 @@ const Login = () => {
           </div>
           <div className="flex flex-col space-y-2">
             <label className="font-bold">Enter Password</label>
-            <CustomInput
-              placeholder="Use a strong password"
-              type={"password"}
-            />
+            <CustomInput placeholder="Ex: $#12ab);@+" type={"password"} />
           </div>
           <input
             className="inline-block primary_btn_bg px-5 py-2 rounded-md text-sm hover:bg-[#2a8a82] duration-150 transition-all w-full mt-5 md:mt-7 cursor-pointer"
