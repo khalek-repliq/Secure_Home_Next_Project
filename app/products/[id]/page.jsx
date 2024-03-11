@@ -27,11 +27,11 @@ export default function ProductDetails() {
   };
 
   return (
-    <div className="my-10 rounded-2xl bg-white p-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 my-10 rounded-2xl bg-white p-10">
         {/* Product Image Area */}
-        <div className="flex  justify-end">
-          <div className="w-3/4 h-auto">
+        <div className="flex justify-center lg:justify-end">
+          <div className="w-full  h-auto">
             <Image
               src={product?.image}
               className="w-full h-full"
@@ -44,12 +44,12 @@ export default function ProductDetails() {
         {/* Product Specification Content */}
         <div className="mt-6 ">
           <div className="flex flex-col space-y-8 items-start">
-            <h4 className="text-4xl">{product?.title}</h4>
+            <h4 className="text-2xl md:text-4xl">{product?.title}</h4>
             <p className="lg:text-xl">{product?.description}</p>
-            <table className=" w-2/3 flex flex-col gap-5">
-              <tr className="flex ">
+            <table className="w-full md:w-2/3 flex flex-col gap-5">
+              <tr className="flex w-full">
                 <td className="w-1/2 font-bold text-gray-600">Price:</td>
-                <td className="text-[#27bfb3] font-medium">
+                <td className="text-[#27bfb3] font-medium w-1/2">
                   ${product?.price}
                 </td>
               </tr>
@@ -73,7 +73,6 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="w-full border-b-[1px] my-5 md:my-10"></div>
       <div className="my-3">
         <h4 className="text-3xl">Related products</h4>
       </div>
