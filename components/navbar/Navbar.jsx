@@ -8,9 +8,9 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 // Navbar Items style here
 const navStyle = {
   active:
-    "bg-[#27bfb3] text-white  px-4 py-2 rounded-md text-sm flex items-center",
+    "bg-[#27bfb3] text-white  px-2 lg:px-4 py-1 lg:py-2 rounded-md text-sm flex items-center",
   default:
-    "px-4 py-2 rounded-md hover:text-white hover:bg-[#27bfb3] duration-300 transition-all text-sm flex items-center",
+    "px-2 lg:px-4 py-1 lg:py-2 rounded-md hover:text-white hover:bg-[#27bfb3] duration-300 transition-all text-sm flex items-center",
 };
 
 // All navbar Items list here
@@ -56,7 +56,7 @@ const Navbar = () => {
     itemPath === pathName ? true : false;
 
   return (
-    <div className="shadow-lg py-3 px-3 md:px-5 lg:px-10  bg-gray-300">
+    <div className="shadow-lg py-3 px-3 md:px-5 lg:px-10  bg-gray-300 fixed top-0 z-50 w-full">
       <div className="flex justify-between ">
         {/* logo area */}
         <div>
@@ -84,7 +84,7 @@ const Navbar = () => {
         </div>
 
         {/* Items area */}
-        <div className=" md:leading-[2.5]">
+        <div className="mt-2 lg:mt-0 md:leading-[2.5]">
           {/* Mobile hamburger menu icon */}
           <div className="md:hidden">
             {/* menu icon */}
@@ -124,32 +124,32 @@ const Navbar = () => {
               )}
             </div>
             {/* mobile menu item list */}
-            <div>
-              <ul
-                className={`md:hidden items-center font-medium bg-white w-full h-full absolute  top-[80px] text-center space-y-5 transition-all duration-300 py-3 z-50 ${
-                  open ? "left-0" : "-left-full"
-                }`}
-              >
-                {navItem.map((item) => (
-                  <li key={item.id}>
-                    <Link
-                      className={
-                        handleNavbarStyle(item.path)
-                          ? navStyle.active
-                          : navStyle.default
-                      }
-                      href={item.path}
-                      onClick={() => setOpen(!open)}
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul
+              className={`md:hidden items-center font-medium  w-full absolute  top-[64px] text-center space-y-5 transition-all duration-300 py-3 z-50 p-3 md:p-0 bg-white h-[calc(100vh-64px)] ${
+                open ? "left-0" : "-left-full"
+              }`}
+            >
+              {navItem.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    className={
+                      handleNavbarStyle(item.path)
+                        ? navStyle.active
+                        : navStyle.default
+                    }
+                    href={item.path}
+                    onClick={() => setOpen(!open)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <ul className={`hidden md:flex items-center space-x-4 font-medium`}>
+          <ul
+            className={`hidden md:flex items-center space-x-3 lg:space-x-4 font-medium`}
+          >
             {navItem.map((item, index) => (
               <li
                 onMouseEnter={() => index === 1 && setIsCategoryMenuOpen(true)}

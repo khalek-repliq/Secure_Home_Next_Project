@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <TenStackQueryWrapper>
-        <body className={`${font.className} bg-gray-100 `}>
+        <body className={`${font.className} bg-gray-100 mt-16 `}>
           {/* Main Navbar Component */}
           <Navbar />
           <div>{children}</div>
