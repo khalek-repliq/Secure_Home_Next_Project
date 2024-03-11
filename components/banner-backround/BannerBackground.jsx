@@ -5,6 +5,7 @@ const BannerBackground = ({ bannerImage, children }) => {
   return (
     <>
       <Image
+        className="h-full"
         src={bannerImage}
         alt="Main banner image"
         quality={100}
