@@ -3,6 +3,7 @@ import CustomInput from "@/components/custom-input/CustomInput";
 import { signUPSchema } from "@/schema/yupSchema";
 import { useFormik } from "formik";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 
@@ -14,6 +15,7 @@ const initialValues = {
 };
 
 const Registration = () => {
+  const router = useRouter();
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -28,6 +30,7 @@ const Registration = () => {
         } else {
           localStorage.setItem("user", JSON.stringify(values));
           toast.success("User saved.");
+          router.push("/login");
         }
       },
     });

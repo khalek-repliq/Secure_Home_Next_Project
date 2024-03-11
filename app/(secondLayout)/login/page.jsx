@@ -2,6 +2,7 @@
 import CustomInput from "@/components/custom-input/CustomInput";
 import { useFormik } from "formik";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 
@@ -11,17 +12,22 @@ const initialValues = {
 };
 
 const Login = () => {
+  const router = useRouter();
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
-      onSubmit: (values, action) => {
-        action.resetForm();
+      onSubmit: (values, { resetForm }) => {
+        resetForm();
         const existingUser = JSON.parse(localStorage.getItem("user"));
-        if (existingUser) {
-          return toast.error("user already exist.");
+        if (
+          values.email === existingUser.email &&
+          values.password === existingUser.password
+        ) {
+          router.push("/");
+          toast.success("login successfully.");
         } else {
-          localStorage.setItem("user", JSON.stringify(values));
-          toast.success("User saved.");
+          router.push("/registration");
+          return toast.error("user not exist.");
         }
       },
     });

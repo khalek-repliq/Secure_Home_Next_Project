@@ -6,6 +6,9 @@ import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 const ProductCard = ({ allProducts, productsLoading }) => {
   const [select, setSelect] = useState(false);
 
+
+  const handleSelectCart = (id) => {};
+
   return (
     <div>
       <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 ">
@@ -48,7 +51,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
                         </svg>
                       ) : (
                         <svg
-                          onClick={() => setSelect(!select)}
+                          onClick={() => handleSelectCart(product.id)}
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
