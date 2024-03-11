@@ -80,7 +80,7 @@ const Footer = () => {
     <div className="bg-slate-200 px-3 md:px-5 lg:px-10">
       {/* main content */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 w-full h-full ">
-        <div className="col-span-1 flex flex-col justify-evenly">
+        <div className="col-span-1 flex flex-col justify-between py-6 ">
           <div>
             <Link className="flex items-center space-x-2" href="/">
               <svg
@@ -105,6 +105,7 @@ const Footer = () => {
               Secure your home with the latest and newest technology products.
             </p>
           </div>
+          {/* News latter area */}
           <div className="flex items-center gap-3">
             <input
               className="text-sm px-3 py-3 rounded-md shadow-md"

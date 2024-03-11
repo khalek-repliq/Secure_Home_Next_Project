@@ -2,23 +2,15 @@ import React from "react";
 
 const PageHeader = ({ title, subTitle }) => {
   return (
-    <div className="relative">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#27bfb3"
-          fill-opacity=".3"
-          d="M0,256L80,218.7C160,181,320,107,480,90.7C640,75,800,117,960,112C1120,107,1280,53,1360,26.7L1440,0L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-        ></path>
-      </svg>
-      <div
-        style={{ transform: "translate(-50%, -50%)" }}
-        className="absolute top-1/2 left-1/2 flex flex-col items-center"
-      >
-        <h5 className="text-2xl md:text-3xl font-semibold  ">{title}</h5>
-        <p className="text-sm md:text-base text-center text-gray-600 ">
-          {subTitle}
-        </p>
+    <div className=" md:flex flex-col items-center text-center py-5 ">
+      <div className="relative inline-block">
+        <h5 className="text-2xl md:text-3xl font-medium md:font-semibold  before:block before:w-full before:bg-gray-600 before:h-[1px] before:bottom-0 before:absolute">
+          {title}
+        </h5>
       </div>
+      <p className="text-sm md:text-base text-center text-gray-600 ">
+        {subTitle}
+      </p>
     </div>
   );
 };

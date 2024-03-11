@@ -1,5 +1,5 @@
 "use client";
-import PageHeader from "@/components/page-header/PageHeader";
+// import PageHeader from "@/components/page-header/PageHeader";
 import { usePathname } from "next/navigation";
 
 export default function SecondLayout({ children }) {
@@ -33,12 +33,12 @@ export default function SecondLayout({ children }) {
 
   return (
     <>
-      {pageHeaderContent() == null || (
+      {/* {pageHeaderContent() == null || (
         <PageHeader
           title={pageHeaderContent().title}
           subTitle={pageHeaderContent().desc}
         />
-      )}
+      )} */}
       <div className="main_container">{children}</div>
     </>
   );

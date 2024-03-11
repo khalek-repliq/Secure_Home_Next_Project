@@ -167,7 +167,7 @@ const Navbar = () => {
                   <span>{item.name}</span>
                   {item.id === 2 && (
                     <span>
-                      <ChevronDownIcon className="h-6 w-6" />
+                      <ChevronDownIcon className="h-5 w-5" />
                     </span>
                   )}
                 </Link>
