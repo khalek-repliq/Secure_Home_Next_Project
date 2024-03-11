@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
 
-const GlobalWrapper = ({ children }) => {
+const TenStackQueryWrapper = ({ children }) => {
   return (
     <>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
@@ -12,4 +12,4 @@ const GlobalWrapper = ({ children }) => {
   );
 };
 
-export default GlobalWrapper;
+export default TenStackQueryWrapper;

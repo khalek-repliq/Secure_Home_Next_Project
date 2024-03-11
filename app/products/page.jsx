@@ -1,5 +1,4 @@
 "use client";
-import PageHeader from "@/components/page-header/PageHeader";
 import ProductCard from "@/components/product-card/ProductCard";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -17,8 +16,6 @@ export default function ProductsPage() {
 
   return (
     <div>
-      {/* Page header here */}
-
       {/* Main product area */}
       <div>
         <ProductCard allProducts={data} productsLoading={isLoading} />

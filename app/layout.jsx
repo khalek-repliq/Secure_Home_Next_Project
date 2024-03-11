@@ -1,9 +1,9 @@
 import { Figtree, PT_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import GlobalWrapper from "@/components/container/GlobalWrapper";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/footer/Footer";
+import TenStackQueryWrapper from "@/components/container/TenStackQueryWrapper";
 
 // Figtree
 // const inter = Inter({ subsets: ["latin"] });
@@ -19,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <GlobalWrapper>
+      <TenStackQueryWrapper>
         <body className={`${font.className} bg-gray-100 `}>
           {/* Main Navbar Component */}
           <Navbar />
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           <Footer />
           <Toaster />
         </body>
-      </GlobalWrapper>
+      </TenStackQueryWrapper>
     </html>
   );
 }
