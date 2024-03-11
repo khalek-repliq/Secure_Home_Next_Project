@@ -113,7 +113,7 @@ const Footer = () => {
               placeholder="Enter your email"
             />
             <input
-              className="inline-block primary_btn_bg px-3 md:px-5 py-2 md:py-3 rounded-lg text-sm cursor-pointer shadow-md"
+              className="inline-block primary_btn_bg px-3 md:px-5 py-2 md:py-3 rounded-md text-sm cursor-pointer shadow-md hover:bg-[#2a8a82] duration-150 transition-all"
               type="submit"
               value="Subscribe"
             />
