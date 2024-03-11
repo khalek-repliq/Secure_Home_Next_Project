@@ -108,12 +108,12 @@ const Footer = () => {
           {/* News latter area */}
           <div className="flex items-center gap-3">
             <input
-              className="text-sm px-3 py-3 rounded-md shadow-md"
+              className="text-sm p-2 md:p-3 rounded-md shadow-md"
               type="text"
               placeholder="Enter your email"
             />
             <input
-              className="inline-block primary_btn_bg px-5 py-3 rounded-lg text-sm cursor-pointer shadow-md"
+              className="inline-block primary_btn_bg px-3 md:px-5 py-2 md:py-3 rounded-lg text-sm cursor-pointer shadow-md"
               type="submit"
               value="Subscribe"
             />
@@ -121,13 +121,13 @@ const Footer = () => {
         </div>
 
         <div className="col-span-2 py-6 ">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-0">
             <div>
-              <h6 className="text-xl font-bold mb-4">Services</h6>
-              <ul className="flex flex-col space-y-3">
+              <h6 className="text-xl font-bold mb-2 md:mb-4">Services</h6>
+              <ul className="flex flex-col space-y-1 md:space-y-3">
                 {services?.map((service) => (
                   <li
-                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all"
+                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all text-sm mg:text-base"
                     key={service.id}
                   >
                     {service.name}
@@ -136,11 +136,11 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h6 className="text-xl font-bold mb-4">Categories</h6>
-              <ul className="flex flex-col space-y-3">
+              <h6 className="text-xl font-bold mb-2 md:mb-4">Categories</h6>
+              <ul className="flex flex-col space-y-1 md:space-y-3">
                 {categories?.map((category) => (
                   <li
-                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all"
+                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all text-sm mg:text-base"
                     key={category.id}
                   >
                     {category.name}
@@ -149,11 +149,11 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h6 className="text-xl font-bold mb-4">Pages</h6>
-              <ul className="flex flex-col space-y-3">
+              <h6 className="text-xl font-bold mb-2 md:mb-4">Pages</h6>
+              <ul className="flex flex-col space-y-1 md:space-y-3">
                 {pages?.map((page) => (
                   <li
-                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all"
+                    className="cursor-pointer text-gray-600 hover:text-black duration-200 transition-all text-sm mg:text-base"
                     key={page.id}
                   >
                     <Link href={page?.path}>{page.name}</Link>
@@ -164,6 +164,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
       <div className="grid w-full border-t-[1px] h-20 border-white">
         <p className="place-self-center">@All rights reserved.</p>
       </div>
