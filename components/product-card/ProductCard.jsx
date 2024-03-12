@@ -3,7 +3,6 @@ import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 import Image from "next/image";
 
 const ProductCard = ({ allProducts, productsLoading }) => {
-  console.log(allProducts);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
 
@@ -85,7 +84,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
                   </div>
 
                   {/* Price and Details button */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between ">
                     <button>
                       Price:{" "}
                       <span className="font-medium">${product?.price}</span>
@@ -103,11 +102,11 @@ const ProductCard = ({ allProducts, productsLoading }) => {
       </div>
 
       {/* Pagination controls */}
-      <div className="flex justify-center space-x-2 mt-4">
+      <div className="flex justify-center space-x-2 mt-4  pb-4 md:pb-8">
         <button
           onClick={handlePreviousPage}
           disabled={currentPage === 1}
-          className="px-3 py-1 rounded-md bg-blue-500 text-white"
+          className="px-3 py-1 rounded-md primary_btn_bg  cursor-pointer"
         >
           &lt; Prev
         </button>
@@ -117,7 +116,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
             onClick={() => handlePageChange(index + 1)}
             className={`px-3 py-1 rounded-md ${
               currentPage === index + 1
-                ? "bg-blue-500 text-white"
+                ? "primary_btn_bg"
                 : "bg-gray-200 text-gray-700"
             }`}
           >
@@ -127,7 +126,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className="px-3 py-1 rounded-md bg-blue-500 text-white"
+          className="px-3 py-1 rounded-md primary_btn_bg"
         >
           Next &gt;
         </button>

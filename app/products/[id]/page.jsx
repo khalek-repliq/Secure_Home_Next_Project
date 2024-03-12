@@ -1,5 +1,6 @@
 "use client";
 import ProductCard from "@/components/product-card/ProductCard";
+import SingleProductCard from "@/components/products-section/SingleProductCard";
 import SecondaryBtn from "@/components/secondary-Btn/SecondaryBtn";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
@@ -21,6 +22,7 @@ export default function ProductDetails() {
   const relatedProducts = data?.filter(
     (item) => item.category === product.category
   );
+  console.log(relatedProducts.map((pr) => pr.category));
 
   const handleAddToCart = () => {
     toast.success("Product Added");
@@ -76,11 +78,14 @@ export default function ProductDetails() {
       <div className="my-3">
         <h4 className="text-3xl">Related products</h4>
       </div>
-      <div>
-        <ProductCard
-          allProducts={relatedProducts}
-          productsLoading={isLoading}
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 ">
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          relatedProducts.map((product) => (
+            <SingleProductCard key={product.id} product={product} />
+          ))
+        )}
       </div>
     </div>
   );

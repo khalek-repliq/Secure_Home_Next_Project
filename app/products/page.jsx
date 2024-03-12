@@ -13,7 +13,6 @@ export default function ProductsPage() {
         )
         .then((res) => res.data),
   });
-  console.log(data);
 
   return (
     <div>

@@ -1,14 +1,12 @@
 "use client";
 import React from "react";
-// import productsData from "@/DummyData/products/products.json";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import SectionHeader from "../section-header/SectionHeader";
-import ProductCard from "../product-card/ProductCard";
-// import { useQuery } from "react-query";
+import SingleProductCard from "./SingleProductCard";
 
 const ProductsSection = () => {
-  const { data: allProducts, isLoading: productsLoading } = useQuery({
+  const { data: allProducts, isLoading: isProductsLoading } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
       const res = await axios.get(
@@ -17,18 +15,21 @@ const ProductsSection = () => {
       return res.data;
     },
   });
-  // console.log(allProducts);
   return (
     <div>
       {/* Page Header  */}
       <SectionHeader>Products for Buy</SectionHeader>
       {/* Main product  */}
-      <div>
-        {/* product card here */}
-        <ProductCard
-          allProducts={allProducts}
-          productsLoading={productsLoading}
-        />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 ">
+        {isProductsLoading ? (
+          <p>Loading...</p>
+        ) : (
+          allProducts
+            .slice(0, 6)
+            ?.map((product) => (
+              <SingleProductCard key={product.id} product={product} />
+            ))
+        )}
       </div>
     </div>
   );
