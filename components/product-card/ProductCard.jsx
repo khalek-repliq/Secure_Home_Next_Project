@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const ProductCard = ({ allProducts, productsLoading }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 6; // Number of products to display per page
+  const productsPerPage = 6;
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -100,6 +100,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
           ))
         )}
       </div>
+
       {/* Pagination controls */}
       <div className="flex justify-center space-x-2 mt-4">
         <button
