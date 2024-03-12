@@ -5,7 +5,7 @@ import PrimaryBtn from "../primary-Btn/PrimaryBtn";
 
 const HomeBanner = () => {
   return (
-    <div className="relative w-full h-[calc(100vh-200px)] md:h-full ">
+    <div className="relative w-full h-[calc(100vh-200px)] md:h-full mb-3">
       {/* Background Image Component here */}
       <BannerBackground bannerImage={bannerImage} />
       <div className="absolute px-3 md:px-5 lg:px-10 flex items-center w-full top-0 text-white bg-black h-full bg-opacity-20">

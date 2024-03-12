@@ -1,12 +1,17 @@
 import React from "react";
+import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 
-const SectionHeader = ({ children }) => {
+const SectionHeader = ({ direction, btnText, title }) => {
+  console.log(direction, btnText, title);
   return (
-    <div className="flex items-center justify-center py-4 md:py-10">
-      <div className=" relative pb-5">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold uppercase before:block before:w-full before:bg-gray-600 before:h-[1px] before:bottom-0 before:absolute">
-          {children}
+    <div className="flex items-center justify-between pt-4 md:pt-6">
+      <div>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">
+          {title}
         </h2>
+      </div>
+      <div>
+        <SecondaryBtn direction={direction} title={btnText} />
       </div>
     </div>
   );

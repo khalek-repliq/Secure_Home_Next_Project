@@ -9,9 +9,20 @@ export default function Home() {
       {/* Product display section */}
       <HomeBanner />
       <div className="main_container">
-        <ProductsSection />
-        <SectionHeader>Our Services</SectionHeader>
+        <SectionHeader
+          direction={"/services"}
+          btnText={"See all Services"}
+          title={"Our Services"}
+        />
+        {/* Service Card here */}
         <ServiceCards />
+
+        <SectionHeader
+          direction={"/products"}
+          btnText={"See all products"}
+          title={"Latest products"}
+        />
+        <ProductsSection />
       </div>
     </div>
   );
