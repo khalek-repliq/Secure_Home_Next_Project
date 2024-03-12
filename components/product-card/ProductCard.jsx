@@ -3,6 +3,7 @@ import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 import Image from "next/image";
 
 const ProductCard = ({ allProducts, productsLoading }) => {
+  console.log(allProducts);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
 
@@ -13,7 +14,7 @@ const ProductCard = ({ allProducts, productsLoading }) => {
     indexOfLastProduct
   );
 
-  const totalPages = Math.ceil(allProducts.length / productsPerPage);
+  const totalPages = Math.ceil(allProducts?.length / productsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);

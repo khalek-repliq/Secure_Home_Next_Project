@@ -106,6 +106,15 @@
     "image": "https://i.ibb.co/1mnfxVr/product-3.jpg",
     "category": "Camera",
     "company": "SUMRING"
+  },
+  {
+    "id": 13,
+    "title": "IFITECH Indoor HD 720p wireless Camera",
+    "description": "This is the description for the IFITECH Indoor HD 720p wireless Camera.",
+    "price": 49.99,
+    "image": "https://i.ibb.co/qR6pTfy/product-2.jpg",
+    "category": "Camera",
+    "company": "IFITECH"
   }
 ]
 
