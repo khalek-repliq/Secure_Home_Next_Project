@@ -3,12 +3,14 @@ import { Rating } from "@smastrom/react-rating";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import "@smastrom/react-rating/style.css";
+import toast from "react-hot-toast";
 
 const ServiceDetails = () => {
   const { id } = useParams();
+  const router = useRouter();
   const { data: services, isLoading } = useQuery({
     queryKey: ["services"],
     queryFn: () =>
@@ -19,6 +21,16 @@ const ServiceDetails = () => {
         .then((res) => res.data),
   });
   const service = services?.find((service) => service.id == id);
+
+  const handleBooking = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      toast.success("Booking confirm");
+    } else {
+      toast.error("Login first");
+      router.push("/login");
+    }
+  };
 
   return (
     <>
@@ -79,35 +91,19 @@ const ServiceDetails = () => {
                   </td>
                 </tr>
               </table>
+              <div>
+                <button
+                  onClick={handleBooking}
+                  className="inline-block primary_btn_bg px-5 py-2 rounded-md text-sm hover:bg-[#2a8a82] duration-150 transition-all"
+                >
+                  Book a service
+                </button>
+              </div>
             </div>
           </div>
           {/* others content */}
           <div className="mb-10">
-            <div className="space-y-5 mb-5">
-              <h4 className="text-3xl">Reviews</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-5 space-y-5 md:space-y-0">
-                {service.reviews.map((review, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-3 rounded-lg shadow-lg"
-                  >
-                    <h6 className="text-xl font-medium">{review.user}</h6>
-                    <div>
-                      <p className="text-gray-600">
-                        Rating: <span>({review.rating})</span>
-                      </p>
-                      <Rating
-                        value={review.rating}
-                        readOnly
-                        style={{ maxWidth: 100 }}
-                      />
-                    </div>
-                    <p className="text-gray-600">{review.comment}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
               <div className="space-y-5">
                 <h4 className="text-3xl">Provider Information</h4>
                 <table className=" w-full flex flex-col space-y-3">
@@ -158,6 +154,30 @@ const ServiceDetails = () => {
                     </p>
                   ))}
                 </div>
+              </div>
+            </div>
+            <div className="space-y-5">
+              <h4 className="text-3xl">Reviews</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-5 space-y-5 md:space-y-0">
+                {service.reviews.map((review, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-3 rounded-lg shadow-lg"
+                  >
+                    <h6 className="text-xl font-medium">{review.user}</h6>
+                    <div>
+                      <p className="text-gray-600">
+                        Rating: <span>({review.rating})</span>
+                      </p>
+                      <Rating
+                        value={review.rating}
+                        readOnly
+                        style={{ maxWidth: 100 }}
+                      />
+                    </div>
+                    <p className="text-gray-600">{review.comment}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

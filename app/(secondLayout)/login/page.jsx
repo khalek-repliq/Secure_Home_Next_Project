@@ -13,6 +13,8 @@ const initialValues = {
 
 const Login = () => {
   const router = useRouter();
+  const { pathname } = router;
+  const from = pathname || "/";
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
@@ -23,7 +25,7 @@ const Login = () => {
           values.email === existingUser.email &&
           values.password === existingUser.password
         ) {
-          router.push("/");
+          router.push(from);
           toast.success("login successfully.");
         } else {
           router.push("/registration");
