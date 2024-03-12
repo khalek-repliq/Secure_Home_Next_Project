@@ -61,6 +61,51 @@
     "image": "https://i.ibb.co/1mnfxVr/product-3.jpg",
     "category": "Motion sensor",
     "company": "SUMRING"
+  },
+  {
+    "id": 8,
+    "title": "Philips Hue dimmer switch",
+    "description": "This is the description for the Philips Hue dimmer switch.",
+    "price": 15.99,
+    "image": "https://i.ibb.co/chx6vv3/product-4.webp",
+    "category": "Camera",
+    "company": "Sony"
+  },
+  {
+    "id": 9,
+    "title": "Imported water heater",
+    "description": "This is the description for the Imported water heater.",
+    "price": 399.99,
+    "image": " https://i.ibb.co/vmHGYLG/product-5.webp",
+    "category": "Water heater",
+    "company": "Phillips"
+  },
+  {
+    "id": 10,
+    "title": "IFITECH Indoor HD 720p wireless Camera",
+    "description": "This is the description for the IFITECH Indoor HD 720p wireless Camera.",
+    "price": 49.99,
+    "image": "https://i.ibb.co/qR6pTfy/product-2.jpg",
+    "category": "Camera",
+    "company": "IFITECH"
+  },
+  {
+    "id": 11,
+    "title": "Wireless anti thief motion detector",
+    "description": "This is the description for the Wireless anti thief motion detector.",
+    "price": 29.99,
+    "image": "https://i.ibb.co/nPqxZW3/product-1.jpg",
+    "category": "Motion sensor",
+    "company": "SUMRING"
+  },
+  {
+    "id": 12,
+    "title": "FHD DJ Machin (black)",
+    "description": "This is the description for the FHD DJ Machin (black). Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, libero!",
+    "price": 349.99,
+    "image": "https://i.ibb.co/1mnfxVr/product-3.jpg",
+    "category": "Camera",
+    "company": "SUMRING"
   }
 ]
 
