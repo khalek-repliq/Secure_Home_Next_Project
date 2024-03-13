@@ -2,7 +2,6 @@ import React from "react";
 import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 
 const SectionHeader = ({ direction, btnText, title }) => {
-  console.log(direction, btnText, title);
   return (
     <div className="flex items-center justify-between pt-4 md:pt-6">
       <div>

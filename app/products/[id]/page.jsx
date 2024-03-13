@@ -30,9 +30,9 @@ export default function ProductDetails() {
 
   return (
     <div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 my-10 rounded-2xl bg-white p-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 my-10 rounded-2xl bg-white py-6 mt-16">
         {/* Product Image Area */}
-        <div className="flex justify-center lg:justify-end">
+        <div className="flex justify-center xl:justify-end ">
           <div className="w-full  h-auto">
             <Image
               src={product?.image}

@@ -1,4 +1,6 @@
+import CommentSection from "@/components/comment-section/CommentSection";
 import HomeBanner from "@/components/home-banner/HomeBanner";
+import HomeVideoSection from "@/components/home-video-section/HomeVideoSection";
 import ProductsSection from "@/components/products-section/ProductsSection";
 import SectionHeader from "@/components/section-header/SectionHeader";
 import ServiceCards from "@/components/service-cards/ServiceCards";
@@ -23,6 +25,10 @@ export default function Home() {
           title={"Latest products"}
         />
         <ProductsSection />
+        {/* Video section */}
+        <HomeVideoSection />
+        {/* Comment section */}
+        <CommentSection />
       </div>
     </div>
   );
