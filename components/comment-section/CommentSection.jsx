@@ -28,7 +28,7 @@ const CommentSection = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 2,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
     responsive: [
@@ -66,7 +66,7 @@ const CommentSection = () => {
               />
             </div>
             <div>
-              <p className="text-gray-600 border">{review.comment}</p>
+              <p className="text-gray-600">{review.comment}</p>
             </div>
           </div>
         ))}
