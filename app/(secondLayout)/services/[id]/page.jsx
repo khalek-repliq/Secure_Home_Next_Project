@@ -7,6 +7,8 @@ import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import "@smastrom/react-rating/style.css";
 import toast from "react-hot-toast";
+import CardSkeleton from "@/components/loading-skeleton/CardSkeleton";
+import DetailsPageSkeleton from "@/components/loading-skeleton/DetailsPageSkeleton";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -35,7 +37,7 @@ const ServiceDetails = () => {
   return (
     <>
       {isLoading ? (
-        <p>Loading...</p>
+        <DetailsPageSkeleton />
       ) : (
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-10 p-5 md:my-10">
