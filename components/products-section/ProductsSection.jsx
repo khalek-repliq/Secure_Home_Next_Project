@@ -4,6 +4,7 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import SectionHeader from "../section-header/SectionHeader";
 import SingleProductCard from "./SingleProductCard";
+import CardSkeleton from "../loading-skeleton/CardSkeleton";
 
 const ProductsSection = () => {
   const { data: allProducts, isLoading: isProductsLoading } = useQuery({
@@ -20,7 +21,14 @@ const ProductsSection = () => {
       {/* Main product  */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 ">
         {isProductsLoading ? (
-          <p>Loading...</p>
+          <>
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+          </>
         ) : (
           allProducts
             .slice(0, 6)

@@ -32,7 +32,7 @@ const MegaMenu = ({ isOpen, onMouseEnter, onMouseLeave }) => {
       style={{ transform: "translate(-50%)" }}
       className={`${
         isOpen ? "hidden md:block" : "hidden"
-      } absolute top-[50px] left-1/2 w-2/3  z-10 duration-300 transition-all ease-in-out shadow-lg`}
+      } absolute top-[48px] left-1/2 w-2/3  z-10 duration-300 transition-all ease-in-out shadow-lg`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

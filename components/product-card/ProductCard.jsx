@@ -1,6 +1,8 @@
 import { useState } from "react";
 import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
 import Image from "next/image";
+import CardSkeleton from "../loading-skeleton/CardSkeleton";
+import toast from "react-hot-toast";
 
 const ProductCard = ({ allProducts, productsLoading }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,7 +41,14 @@ const ProductCard = ({ allProducts, productsLoading }) => {
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 ">
         {productsLoading ? (
-          <p>Loading ...</p>
+          <>
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+          </>
         ) : (
           currentProducts?.map((product) => (
             <div

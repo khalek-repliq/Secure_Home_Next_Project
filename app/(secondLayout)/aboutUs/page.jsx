@@ -54,7 +54,7 @@ const aboutUs = () => {
           <p className="text-gray-600 ">
             <span>
               At <span className="text-[#27bfb3] font-bold">Secure Home</span>,
-              we're passionate about home security. Established- 2024, we're
+              we are passionate about home security. Established- 2024, we are
               dedicated to providing top-quality products and services to ensure
               the safety and peace of mind of our customers. Based in Dhaka,
               Bangladesh, our team combines expertise with innovation to offer

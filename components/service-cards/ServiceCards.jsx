@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import axios from "axios"; // don't forget to import axios
 import ServiceCard from "./ServiceCard";
+import CardSkeleton from "../loading-skeleton/CardSkeleton";
 
 const ServiceCards = () => {
   const { data: services, isLoading } = useQuery({
@@ -18,7 +19,14 @@ const ServiceCards = () => {
   return (
     <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 md:my-12">
       {isLoading ? (
-        <p>Loading ...</p>
+        <>
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+          <CardSkeleton />
+        </>
       ) : (
         services?.map((service) => (
           <ServiceCard key={service.id} service={service} />

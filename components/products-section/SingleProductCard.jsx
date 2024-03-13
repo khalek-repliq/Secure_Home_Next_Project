@@ -1,8 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import SecondaryBtn from "../secondary-Btn/SecondaryBtn";
+import toast from "react-hot-toast";
 
 const SingleProductCard = ({ product }) => {
+  const handleSelectCart = (id) => {
+    toast.success("Product Added to your cart");
+  };
   return (
     <div className="border rounded-2xl shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] bg-white mb-5">
       <div className="flex flex-col justify-between h-full">
