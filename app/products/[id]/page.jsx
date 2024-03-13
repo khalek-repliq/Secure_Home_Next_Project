@@ -22,7 +22,6 @@ export default function ProductDetails() {
   const relatedProducts = data?.filter(
     (item) => item.category === product.category
   );
-  console.log(relatedProducts.map((pr) => pr.category));
 
   const handleAddToCart = () => {
     toast.success("Product Added");
@@ -82,7 +81,7 @@ export default function ProductDetails() {
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          relatedProducts.map((product) => (
+          relatedProducts?.map((product) => (
             <SingleProductCard key={product.id} product={product} />
           ))
         )}

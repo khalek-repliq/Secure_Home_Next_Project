@@ -19,16 +19,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <TenStackQueryWrapper>
-        <body className={`${font.className} bg-gray-100 mt-16 `}>
+      <body className={`${font.className} bg-gray-100 mt-16 `}>
+        <TenStackQueryWrapper>
           {/* Main Navbar Component */}
           <Navbar />
           <div>{children}</div>
           {/* footer */}
           <Footer />
           <Toaster />
-        </body>
-      </TenStackQueryWrapper>
+        </TenStackQueryWrapper>
+      </body>
     </html>
   );
 }

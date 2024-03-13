@@ -16,7 +16,7 @@ const HomeBanner = () => {
           </h1>
           {/* More content */}
           <div className="md:my-5 text-left lg:text-left">
-            <PrimaryBtn direction={"/"}>Browse Products</PrimaryBtn>
+            <PrimaryBtn direction={"/products"}>Browse Products</PrimaryBtn>
           </div>
         </div>
       </div>
