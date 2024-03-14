@@ -10,9 +10,8 @@ const aboutUs = () => {
         subTitle={"Know more about our company and service."}
       />
       <div className="my-5 space-y-3">
-        <h4 className="text-3xl">
-          Company Name: <span className="text-[#27bfb3]">Secure Home</span>
-        </h4>
+        <h4 className="text-3xl">Company Name:</h4>
+        <p className="text-[#27bfb3] text-3xl">Secure Home</p>
       </div>
 
       <div className="my-5 space-y-3">
