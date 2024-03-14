@@ -40,8 +40,8 @@ const Login = () => {
         <h5 className="text-3xl text-center mb-3">Login</h5>
         <div className="space-y-3">
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col space-y-2">
-              <label htmlFor="email" className="font-bold">
+            <div className="flex flex-col space-y-2 mb-2">
+              <label htmlFor="email" className="font-bold text-gray-600">
                 Enter Email
               </label>
               <CustomInput
@@ -59,8 +59,8 @@ const Login = () => {
               ) : null}
             </div>
 
-            <div className="flex flex-col space-y-2">
-              <label htmlFor="password" className="font-bold">
+            <div className="flex flex-col space-y-2 ">
+              <label htmlFor="password" className="font-bold text-gray-600">
                 Enter Password
               </label>
               <CustomInput
