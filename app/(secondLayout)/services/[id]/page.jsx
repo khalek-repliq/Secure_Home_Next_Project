@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import "@smastrom/react-rating/style.css";
 import toast from "react-hot-toast";
 import CardSkeleton from "@/components/loading-skeleton/CardSkeleton";
@@ -13,6 +13,7 @@ import DetailsPageSkeleton from "@/components/loading-skeleton/DetailsPageSkelet
 const ServiceDetails = () => {
   const { id } = useParams();
   const router = useRouter();
+  const [isSeeMore, setIsSeeMore] = useState(false);
   const { data: services, isLoading } = useQuery({
     queryKey: ["services"],
     queryFn: () =>
@@ -32,6 +33,10 @@ const ServiceDetails = () => {
       toast.error("Login first");
       router.push("/login");
     }
+  };
+
+  const handleIsSeeMoreButton = () => {
+    setIsSeeMore(!isSeeMore);
   };
 
   return (
@@ -160,26 +165,58 @@ const ServiceDetails = () => {
             </div>
             <div className="space-y-5">
               <h4 className="text-3xl">Reviews</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-5 space-y-5 md:space-y-0">
-                {service.reviews.map((review, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-3 rounded-lg shadow-lg"
+              <div className=" bg-white p-3 rounded-lg shadow-lg w-full">
+                <div className="space-y-5">
+                  {isSeeMore ||
+                    service.reviews.slice(0, 1).map((review, index) => (
+                      <div key={index} className="">
+                        <h6 className="text-xl font-medium">{review.user}</h6>
+                        <div>
+                          <p className="text-gray-600">
+                            Rating: <span>({review.rating})</span>
+                          </p>
+                          <Rating
+                            value={review.rating}
+                            readOnly
+                            style={{ maxWidth: 100 }}
+                          />
+                        </div>
+                        <p className="text-gray-600">{review.comment}</p>
+                      </div>
+                    ))}
+                  {isSeeMore &&
+                    service.reviews.map((review, index) => (
+                      <div key={index}>
+                        <h6 className="text-xl font-medium">{review.user}</h6>
+                        <div>
+                          <p className="text-gray-600">
+                            Rating: <span>({review.rating})</span>
+                          </p>
+                          <Rating
+                            value={review.rating}
+                            readOnly
+                            style={{ maxWidth: 100 }}
+                          />
+                        </div>
+                        <p className="text-gray-600">{review.comment}</p>
+                      </div>
+                    ))}
+                </div>
+                {isSeeMore ? (
+                  <p
+                    onClick={handleIsSeeMoreButton}
+                    className="cursor-pointer text-gray-600"
                   >
-                    <h6 className="text-xl font-medium">{review.user}</h6>
-                    <div>
-                      <p className="text-gray-600">
-                        Rating: <span>({review.rating})</span>
-                      </p>
-                      <Rating
-                        value={review.rating}
-                        readOnly
-                        style={{ maxWidth: 100 }}
-                      />
-                    </div>
-                    <p className="text-gray-600">{review.comment}</p>
-                  </div>
-                ))}
+                    ...See less
+                  </p>
+                ) : (
+                  <p
+                    onClick={handleIsSeeMoreButton}
+                    className="cursor-pointer text-gray-600"
+                  >
+                    ...See more
+                  </p>
+                )}
               </div>
             </div>
           </div>
