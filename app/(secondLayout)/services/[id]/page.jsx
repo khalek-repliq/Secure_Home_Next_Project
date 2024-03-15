@@ -36,7 +36,7 @@ const ServiceDetails = () => {
   };
 
   const handleIsSeeMoreButton = () => {
-    setIsSeeMore(!isSeeMore);
+    setIsSeeMore((prevIsSeeMore) => !prevIsSeeMore);
   };
 
   return (
@@ -45,7 +45,7 @@ const ServiceDetails = () => {
         <DetailsPageSkeleton />
       ) : (
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-10 p-5 md:my-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-10 pt-5 md:p-5 md:my-10">
             {/* Image area */}
             <div className=" flex justify-center lg:justify-end ">
               <Image
@@ -60,9 +60,11 @@ const ServiceDetails = () => {
             <div className="space-y-5">
               <div className="flex flex-col space-y-5">
                 <h4 className="text-3xl">{service.title}</h4>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 text-sm md:text-base">
+                  {service.description}
+                </p>
               </div>
-              <table className=" w-full flex flex-col space-y-5">
+              <table className=" w-full flex flex-col space-y-5 text-sm md:text-base">
                 <tr className="flex">
                   <td className="w-1/3 font-bold text-gray-600">Price:</td>
                   <td className="text-[#27bfb3] font-medium w-2/3">
@@ -109,11 +111,11 @@ const ServiceDetails = () => {
             </div>
           </div>
           {/* others content */}
-          <div className="mb-10">
+          <div className="my-10 ">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
               <div className="space-y-5">
                 <h4 className="text-3xl">Provider Information</h4>
-                <table className=" w-full flex flex-col space-y-3">
+                <table className=" w-full flex flex-col space-y-1 text-sm md:text-base md:space-y-3">
                   <tr className="flex">
                     <td className="w-1/3 font-bold text-gray-600">
                       Company Name:
@@ -153,7 +155,7 @@ const ServiceDetails = () => {
               </div>
               <div className="space-y-5">
                 <h4 className="text-3xl">Additional Features</h4>
-                <div className="space-y-3">
+                <div className="space-y-1 md:space-y-3 text-sm md:text-base">
                   {service.additional_features.map((features, index) => (
                     <p className="text-gray-600 font-medium" key={index}>
                       <span className="mr-2">{index + 1}.</span>
@@ -172,7 +174,7 @@ const ServiceDetails = () => {
                       <div key={index} className="">
                         <h6 className="text-xl font-medium">{review.user}</h6>
                         <div>
-                          <p className="text-gray-600">
+                          <p className="text-gray-600 text-sm md:text-base">
                             Rating: <span>({review.rating})</span>
                           </p>
                           <Rating
@@ -181,7 +183,9 @@ const ServiceDetails = () => {
                             style={{ maxWidth: 100 }}
                           />
                         </div>
-                        <p className="text-gray-600">{review.comment}</p>
+                        <p className="text-gray-600 text-sm md:text-base">
+                          {review.comment}
+                        </p>
                       </div>
                     ))}
                   {isSeeMore &&
@@ -189,7 +193,7 @@ const ServiceDetails = () => {
                       <div key={index}>
                         <h6 className="text-xl font-medium">{review.user}</h6>
                         <div>
-                          <p className="text-gray-600">
+                          <p className="text-gray-600 text-sm md:text-base">
                             Rating: <span>({review.rating})</span>
                           </p>
                           <Rating
@@ -198,21 +202,23 @@ const ServiceDetails = () => {
                             style={{ maxWidth: 100 }}
                           />
                         </div>
-                        <p className="text-gray-600">{review.comment}</p>
+                        <p className="text-gray-600 text-sm md:text-base">
+                          {review.comment}
+                        </p>
                       </div>
                     ))}
                 </div>
                 {isSeeMore ? (
                   <p
                     onClick={handleIsSeeMoreButton}
-                    className="cursor-pointer text-gray-600"
+                    className="cursor-pointer text-gray-800 text-sm md:text-base"
                   >
                     ...See less
                   </p>
                 ) : (
                   <p
                     onClick={handleIsSeeMoreButton}
-                    className="cursor-pointer text-gray-600"
+                    className="cursor-pointer text-gray-800 text-sm md:text-base"
                   >
                     ...See more
                   </p>

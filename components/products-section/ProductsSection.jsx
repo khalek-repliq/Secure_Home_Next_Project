@@ -19,9 +19,11 @@ const ProductsSection = () => {
   return (
     <div>
       {/* Main product  */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 ">
+      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 my-10 ">
         {isProductsLoading ? (
           <>
+            <CardSkeleton />
+            <CardSkeleton />
             <CardSkeleton />
             <CardSkeleton />
             <CardSkeleton />
@@ -31,7 +33,7 @@ const ProductsSection = () => {
           </>
         ) : (
           allProducts
-            .slice(0, 6)
+            .slice(0, 8)
             ?.map((product) => (
               <SingleProductCard key={product.id} product={product} />
             ))

@@ -46,7 +46,7 @@ const CommentSection = () => {
       <SectionHeader
         direction={"#"}
         title={"Top comments"}
-        btnText={"all comments"}
+        btnText={"All comments"}
       />
       <Slider {...settings} className={`mt-5`}>
         {allReviews.map((review, index) => (
