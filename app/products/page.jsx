@@ -78,7 +78,7 @@ export default function ProductsPage() {
             styles={{
               control: (baseStyles, state) => ({
                 ...baseStyles,
-                backgroundColor: state.isFocused ? "#1b2e54" : "#1b2e54",
+                backgroundColor: state.isFocused ? "#f3f3f3" : "#fff",
               }),
             }}
             options={categories}
