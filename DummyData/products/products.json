@@ -32,7 +32,7 @@
     "description": "This is the description for the Wireless anti thief motion detector.",
     "price": 29.99,
     "image": "https://i.ibb.co/nPqxZW3/product-1.jpg",
-    "category": "Motion sensor",
+    "category": "Blind & Drape Openers",
     "company": "SUMRING"
   },
   {
@@ -41,7 +41,7 @@
     "description": "This is the description for the FHD DJ Machin (black). Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, libero!",
     "price": 349.99,
     "image": "https://i.ibb.co/1mnfxVr/product-3.jpg",
-    "category": "Camera",
+    "category": "Blind & Drape Openers",
     "company": "SUMRING"
   },
   {
@@ -50,7 +50,7 @@
     "description": "This is the description for the Luminous Temperature and Humidity meter. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nemo non maxime.",
     "price": 9.99,
     "image": "https://i.ibb.co/rvNsPtb/product-7.jpg",
-    "category": "Temperature meter",
+    "category": "Smoke Detecting Alarms",
     "company": "HTC"
   },
   {
@@ -59,7 +59,7 @@
     "description": "This is the description for the Wireless anti thief motion detector.",
     "price": 20.99,
     "image": "https://i.ibb.co/1mnfxVr/product-3.jpg",
-    "category": "Motion sensor",
+    "category": "Smoke Detecting Alarms",
     "company": "SUMRING"
   },
   {
@@ -68,7 +68,7 @@
     "description": "This is the description for the Philips Hue dimmer switch.",
     "price": 15.99,
     "image": "https://i.ibb.co/chx6vv3/product-4.webp",
-    "category": "Camera",
+    "category": "Dimmer",
     "company": "Sony"
   },
   {
@@ -104,7 +104,7 @@
     "description": "This is the description for the FHD DJ Machin (black). Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, libero!",
     "price": 349.99,
     "image": "https://i.ibb.co/1mnfxVr/product-3.jpg",
-    "category": "Camera",
+    "category": "Blind & Drape Openers",
     "company": "SUMRING"
   },
   {
