@@ -38,9 +38,25 @@ const categories = [
   },
 ];
 
+
+const customStyles = {
+  control: (baseStyles, state) => ({
+    ...baseStyles,
+    backgroundColor: state.isFocused ? "#f3f3f3" : "#fff",
+  }),
+  option: (baseStyles, state) => ({
+    ...baseStyles,
+    backgroundColor: state.isFocused ? "#f3f3f3" : "#fff",
+    color: state.isFocused ? "blue" : "black", // Change color based on focus state
+  }),
+};
+
 export default function ProductsPage() {
   const [selectCategory, setSelectCategory] = useState(null);
   const [products, setProducts] = useState([]);
+  const defaultCategory = categories.find(
+    (category) => category.value === defaultValue
+  );
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: () =>
@@ -73,15 +89,11 @@ export default function ProductsPage() {
         {/* Sort by category */}
         <div className="flex items-center justify-end drop-shadow-md ">
           <Select
-            styles={{
-              control: (baseStyles, state) => ({
-                ...baseStyles,
-                backgroundColor: state.isFocused ? "#f3f3f3" : "#fff",
-              }),
-            }}
+            styles={customStyles}
             options={categories}
             value={selectCategory}
             onChange={handleCategoryChange}
+            defaultValue={defaultCategory}
             isMulti={false}
           ></Select>
         </div>
