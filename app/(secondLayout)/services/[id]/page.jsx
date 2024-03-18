@@ -7,8 +7,8 @@ import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import "@smastrom/react-rating/style.css";
 import toast from "react-hot-toast";
-import CardSkeleton from "@/components/loading-skeleton/CardSkeleton";
 import DetailsPageSkeleton from "@/components/loading-skeleton/DetailsPageSkeleton";
+import TruncatedParagraph from "@/components/see-more-paragraph/TruncatedParagraph";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -169,44 +169,31 @@ const ServiceDetails = () => {
               <h4 className="text-3xl">Reviews</h4>
               <div className=" bg-white p-3 rounded-lg shadow-lg w-full">
                 <div className="space-y-5">
-                  {isSeeMore ||
-                    service.reviews.slice(0, 1).map((review, index) => (
-                      <div key={index} className="">
-                        <h6 className="text-xl font-medium">{review.user}</h6>
-                        <div>
-                          <p className="text-gray-600 text-sm md:text-base">
-                            Rating: <span>({review.rating})</span>
-                          </p>
-                          <Rating
-                            value={review.rating}
-                            readOnly
-                            style={{ maxWidth: 100 }}
-                          />
-                        </div>
+                  {service.reviews.slice(0, 1).map((review, index) => (
+                    <div key={index} className="">
+                      <h6 className="text-xl font-medium">{review.user}</h6>
+                      <div>
                         <p className="text-gray-600 text-sm md:text-base">
-                          {review.comment}
+                          Rating: <span>({review.rating})</span>
                         </p>
+                        <Rating
+                          value={review.rating}
+                          readOnly
+                          style={{ maxWidth: 100 }}
+                        />
                       </div>
-                    ))}
-                  {isSeeMore &&
-                    service.reviews.map((review, index) => (
-                      <div key={index}>
-                        <h6 className="text-xl font-medium">{review.user}</h6>
-                        <div>
-                          <p className="text-gray-600 text-sm md:text-base">
-                            Rating: <span>({review.rating})</span>
-                          </p>
-                          <Rating
-                            value={review.rating}
-                            readOnly
-                            style={{ maxWidth: 100 }}
-                          />
-                        </div>
-                        <p className="text-gray-600 text-sm md:text-base">
-                          {review.comment}
-                        </p>
-                      </div>
-                    ))}
+                      <TruncatedParagraph
+                        text={review.comment}
+                        extraClasses={
+                          "text-gray-600 text-sm md:text-base inline-block"
+                        }
+                        maxWords={5}
+                      />
+                      {/* <p className="text-gray-600 text-sm md:text-base">
+                        {review.comment}
+                      </p> */}
+                    </div>
+                  ))}
                 </div>
                 {isSeeMore ? (
                   <p

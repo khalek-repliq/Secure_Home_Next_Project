@@ -66,8 +66,6 @@ export default function ProductsPage() {
     setSelectCategory(() => selectCategoryOpt);
   };
 
-  console.log(selectCategory);
-  console.log(products);
   return (
     <div>
       {/* Main product area */}
