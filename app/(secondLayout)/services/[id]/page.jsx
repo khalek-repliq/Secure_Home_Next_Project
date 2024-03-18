@@ -9,6 +9,7 @@ import "@smastrom/react-rating/style.css";
 import toast from "react-hot-toast";
 import DetailsPageSkeleton from "@/components/loading-skeleton/DetailsPageSkeleton";
 import TruncatedParagraph from "@/components/see-more-paragraph/TruncatedParagraph";
+import SecondaryBtn from "@/components/secondary-Btn/SecondaryBtn";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -37,6 +38,7 @@ const ServiceDetails = () => {
 
   const handleIsSeeMoreButton = () => {
     setIsSeeMore((prevIsSeeMore) => !prevIsSeeMore);
+    console.log(isSeeMore);
   };
 
   return (
@@ -169,46 +171,63 @@ const ServiceDetails = () => {
               <h4 className="text-3xl">Reviews</h4>
               <div className=" bg-white p-3 rounded-lg shadow-lg w-full">
                 <div className="space-y-5">
-                  {service.reviews.slice(0, 1).map((review, index) => (
-                    <div key={index} className="">
-                      <h6 className="text-xl font-medium">{review.user}</h6>
-                      <div>
-                        <p className="text-gray-600 text-sm md:text-base">
-                          Rating: <span>({review.rating})</span>
-                        </p>
-                        <Rating
-                          value={review.rating}
-                          readOnly
-                          style={{ maxWidth: 100 }}
+                  {isSeeMore ||
+                    service.reviews.slice(0, 1).map((review, index) => (
+                      <div key={index} className="">
+                        <h6 className="text-xl font-medium">{review.user}</h6>
+                        <div>
+                          <p className="text-gray-600 text-sm md:text-base">
+                            Rating: <span>({review.rating})</span>
+                          </p>
+                          <Rating
+                            value={review.rating}
+                            readOnly
+                            style={{ maxWidth: 100 }}
+                          />
+                        </div>
+                        <TruncatedParagraph
+                          text={review.comment}
+                          extraClasses={
+                            "text-gray-600 text-sm md:text-base inline-block"
+                          }
+                          maxWords={5}
                         />
                       </div>
-                      <TruncatedParagraph
-                        text={review.comment}
-                        extraClasses={
-                          "text-gray-600 text-sm md:text-base inline-block"
-                        }
-                        maxWords={5}
-                      />
-                      {/* <p className="text-gray-600 text-sm md:text-base">
-                        {review.comment}
-                      </p> */}
-                    </div>
-                  ))}
+                    ))}
+                  {isSeeMore &&
+                    service.reviews.map((review, index) => (
+                      <div key={index} className="">
+                        <h6 className="text-xl font-medium">{review.user}</h6>
+                        <div>
+                          <p className="text-gray-600 text-sm md:text-base">
+                            Rating: <span>({review.rating})</span>
+                          </p>
+                          <Rating
+                            value={review.rating}
+                            readOnly
+                            style={{ maxWidth: 100 }}
+                          />
+                        </div>
+                        <TruncatedParagraph
+                          text={review.comment}
+                          extraClasses={
+                            "text-gray-600 text-sm md:text-base inline-block"
+                          }
+                          maxWords={5}
+                        />
+                      </div>
+                    ))}
                 </div>
                 {isSeeMore ? (
-                  <p
-                    onClick={handleIsSeeMoreButton}
-                    className="cursor-pointer text-gray-800 text-sm md:text-base"
-                  >
-                    ...See less
-                  </p>
+                  <SecondaryBtn
+                    onClick={() => handleIsSeeMoreButton()}
+                    title="See less comments"
+                  />
                 ) : (
-                  <p
-                    onClick={handleIsSeeMoreButton}
-                    className="cursor-pointer text-gray-800 text-sm md:text-base"
-                  >
-                    ...See more
-                  </p>
+                  <SecondaryBtn
+                    onClick={() => handleIsSeeMoreButton()}
+                    title="See all comments"
+                  />
                 )}
               </div>
             </div>
