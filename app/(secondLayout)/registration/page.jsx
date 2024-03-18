@@ -41,8 +41,8 @@ const Registration = () => {
         <h5 className="text-3xl text-center mb-3">Registration</h5>
         <div className="space-y-3">
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col space-y-2 mb-3">
-              <label htmlFor="name" className="font-bold text-gray-600">
+            <div className="flex flex-col mb-3">
+              <label htmlFor="name" className="font-medium text-gray-500">
                 Enter Name
               </label>
               <CustomInput
@@ -59,8 +59,8 @@ const Registration = () => {
                 <p className="text-red-600">{errors.name}</p>
               ) : null}
             </div>
-            <div className="flex flex-col space-y-2 mb-3">
-              <label htmlFor="email" className="font-bold text-gray-600">
+            <div className="flex flex-col mb-3">
+              <label htmlFor="email" className="font-medium text-gray-500">
                 Enter Email
               </label>
               <CustomInput
@@ -78,8 +78,8 @@ const Registration = () => {
               ) : null}
             </div>
 
-            <div className="flex flex-col space-y-2 mb-3">
-              <label htmlFor="password" className="font-bold text-gray-600">
+            <div className="flex flex-col mb-3">
+              <label htmlFor="password" className="font-medium text-gray-500">
                 Enter Password
               </label>
               <CustomInput
@@ -97,10 +97,10 @@ const Registration = () => {
               ) : null}
             </div>
 
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col">
               <label
                 htmlFor="confirm_password"
-                className="font-bold text-gray-600"
+                className="font-medium text-gray-500"
               >
                 Confirm Password
               </label>
@@ -125,7 +125,7 @@ const Registration = () => {
               value={"Submit"}
             />
             <div>
-              <p>
+              <p className="my-1">
                 Already have an account?{" "}
                 <span>
                   <Link className="text-[#27bfb3]" href="/login">
