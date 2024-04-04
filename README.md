@@ -1,4 +1,4 @@
-#Secure-Home
+## Site name: Secure-Home
 
 ## Getting Started
 
